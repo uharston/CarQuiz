@@ -1,0 +1,950 @@
+[
+    {
+      "make_id": 440,
+      "make_name": "ASTON MARTIN",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 441,
+      "make_name": "TESLA",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 442,
+      "make_name": "JAGUAR",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 443,
+      "make_name": "MASERATI",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 445,
+      "make_name": "ROLLS ROYCE",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 448,
+      "make_name": "TOYOTA",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 449,
+      "make_name": "MERCEDES-BENZ",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 452,
+      "make_name": "BMW",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 454,
+      "make_name": "BUGATTI",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 456,
+      "make_name": "MINI",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 460,
+      "make_name": "FORD",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 464,
+      "make_name": "LINCOLN",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 465,
+      "make_name": "MERCURY",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 466,
+      "make_name": "LOTUS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 467,
+      "make_name": "CHEVROLET",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 468,
+      "make_name": "BUICK",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 469,
+      "make_name": "CADILLAC",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 470,
+      "make_name": "HOLDEN",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 471,
+      "make_name": "OPEL",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 472,
+      "make_name": "GMC",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 473,
+      "make_name": "MAZDA",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 474,
+      "make_name": "HONDA",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 475,
+      "make_name": "ACURA",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 476,
+      "make_name": "DODGE",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 477,
+      "make_name": "CHRYSLER",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 478,
+      "make_name": "NISSAN",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 480,
+      "make_name": "INFINITI",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 481,
+      "make_name": "MITSUBISHI",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 482,
+      "make_name": "VOLKSWAGEN",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 485,
+      "make_name": "VOLVO",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 492,
+      "make_name": "FIAT",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 493,
+      "make_name": "ALFA ROMEO",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 497,
+      "make_name": "LANCIA",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 498,
+      "make_name": "HYUNDAI",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 499,
+      "make_name": "KIA",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 502,
+      "make_name": "LAMBORGHINI",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 504,
+      "make_name": "SMART",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 509,
+      "make_name": "SUZUKI",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 515,
+      "make_name": "LEXUS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 523,
+      "make_name": "SUBARU",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 533,
+      "make_name": "MAYBACH",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 536,
+      "make_name": "PONTIAC",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 539,
+      "make_name": "MORGAN",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 542,
+      "make_name": "ISUZU",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 565,
+      "make_name": "TRIUMPH",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 572,
+      "make_name": "SAAB",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 582,
+      "make_name": "AUDI",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 583,
+      "make_name": "BENTLEY",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 584,
+      "make_name": "PORSCHE",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 603,
+      "make_name": "FERRARI",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 606,
+      "make_name": "AM GENERAL",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 629,
+      "make_name": "CREATIVE COACHWORKS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 771,
+      "make_name": "AC PROPULSION",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 847,
+      "make_name": "DAIHATSU",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 972,
+      "make_name": "FALCON",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 986,
+      "make_name": "EV INNOVATIONS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 992,
+      "make_name": "FAW JIAXING HAPPY MESSENGER",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1033,
+      "make_name": "FISKER AUTOMOTIVE",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1034,
+      "make_name": "NINA",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1056,
+      "make_name": "SATURN",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1077,
+      "make_name": "DAEWOO",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1124,
+      "make_name": "AMERICAN MOTORS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1142,
+      "make_name": "FORMULA 1 STREET COM",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1146,
+      "make_name": "GEO",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1151,
+      "make_name": "FORTUNESPORT VES",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1288,
+      "make_name": "AAS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1292,
+      "make_name": "EQUUS AUTOMOTIVE",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1393,
+      "make_name": "ELECTRIC MOBILE CARS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1498,
+      "make_name": "AVERA MOTORS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1683,
+      "make_name": "BAKKURA MOBILITY",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1755,
+      "make_name": "TH!NK",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1777,
+      "make_name": "CODA",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1869,
+      "make_name": "CONTEMPORARY CLASSIC CARS (CCC)",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1896,
+      "make_name": "KOENIGSEGG",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 1991,
+      "make_name": "BYD",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 2049,
+      "make_name": "KEPLER MOTORS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 2131,
+      "make_name": "MAKING YOU MOBILE",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 2236,
+      "make_name": "MCLAREN",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 2376,
+      "make_name": "MYCAR",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 2408,
+      "make_name": "EAGLE",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 2409,
+      "make_name": "PLYMOUTH",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 2618,
+      "make_name": "NANCHANG FREEDOM TECHNOLOGY LIMITED COMPANY ",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 2665,
+      "make_name": "NJD AUTOMOTIVE LLC",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 2745,
+      "make_name": "PHOENIX MOTORCARS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 3176,
+      "make_name": "ROCKET SLED MOTORS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 3440,
+      "make_name": "VISION INDUSTRIES",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 3540,
+      "make_name": "WARHAWK PERFORMANCE",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 3583,
+      "make_name": "UKEYCHEYMA",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 3766,
+      "make_name": "SPYKER ",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 3873,
+      "make_name": "ZHEJIANG KANGDI VEHICLES CO",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 4162,
+      "make_name": "OLDSMOBILE",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 4220,
+      "make_name": "PANOZ",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 4355,
+      "make_name": "SALEEN",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 4410,
+      "make_name": "SOLECTRIA",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 4451,
+      "make_name": "YESTER YEAR AUTO",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 4596,
+      "make_name": "BXR",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 4634,
+      "make_name": "ENGINE CONNECTION",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 4644,
+      "make_name": "BLUECAR",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 4764,
+      "make_name": "MOSLER",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 4767,
+      "make_name": "PAGANI",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 4859,
+      "make_name": "REVOLOGY",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5015,
+      "make_name": "EMA",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5042,
+      "make_name": "COSTIN SPORTS CAR",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5083,
+      "make_name": "GENESIS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5122,
+      "make_name": "KARMA",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5208,
+      "make_name": "MATRIX MOTOR COMPANY",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5367,
+      "make_name": "ARMBRUSTER STAGEWAY ",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5381,
+      "make_name": "LUMEN",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5464,
+      "make_name": "ASUNA",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5468,
+      "make_name": "MERKUR",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5552,
+      "make_name": "AVANTI",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5553,
+      "make_name": "YUGO",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5554,
+      "make_name": "PEUGEOT",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5555,
+      "make_name": "STERLING MOTOR CAR",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5557,
+      "make_name": "CONSULIER GTP",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5657,
+      "make_name": "DATSUN",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5661,
+      "make_name": "PININFARINA",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5760,
+      "make_name": "VINTAGE AUTO ",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5767,
+      "make_name": "LONDONCOACH INC",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5848,
+      "make_name": "MGS GRAND SPORT (MARDIKIAN)",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 5938,
+      "make_name": "PANTHER",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 6018,
+      "make_name": "DAYTONA COACH BUILDERS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 6069,
+      "make_name": "UCC",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 6263,
+      "make_name": "RS SPIDER",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 6264,
+      "make_name": "GRUPPE B",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 6313,
+      "make_name": "RENAISSANCE",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 6364,
+      "make_name": "JAC 427",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 6408,
+      "make_name": "HUNTER DESIGN GROUP, LLC",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 6473,
+      "make_name": "BLACKWATER",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 6663,
+      "make_name": "GULLWING INTERNATIONAL MOTORS, LTD.",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 6759,
+      "make_name": "AMERITECH CORPORATION",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 6792,
+      "make_name": "STANFORD CUSTOMS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 6880,
+      "make_name": "CLASSIC ROADSTERS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 6986,
+      "make_name": "HERITAGE",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 7099,
+      "make_name": "COBRA CARS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 7207,
+      "make_name": "C-R CHEETAH RACE CARS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 7225,
+      "make_name": "PAS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 7425,
+      "make_name": "BUG MOTORS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 7477,
+      "make_name": "EXCALIBUR AUTOMOBILE CORPORATION",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 7765,
+      "make_name": "IVES MOTORS CORPORATION (IMC)",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 7836,
+      "make_name": "AUTODELTA USA INC",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 8395,
+      "make_name": "AUTOCAR LTD",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 8605,
+      "make_name": "BBC",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 8785,
+      "make_name": "PHOENIX SPORTS CARS, INC.",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 9250,
+      "make_name": "VECTOR AEROMOTIVE CORPORATION",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 9376,
+      "make_name": "WESTFALL MOTORS CORP.",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 9401,
+      "make_name": "CLENET",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 9458,
+      "make_name": "CX AUTOMOTIVE",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 9533,
+      "make_name": "LA EXOTICS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 9572,
+      "make_name": "CLASSIC SPORTS CARS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 9720,
+      "make_name": "SF MOTORS INC.",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 9759,
+      "make_name": "SCUDERIA CAMERON GLICKENHAUS (SCG)",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 10029,
+      "make_name": "VINTAGE CRUISER",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 10030,
+      "make_name": "VINTAGE MICROBUS",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 10031,
+      "make_name": "VINTAGE ROVER",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 10047,
+      "make_name": "LITE CAR",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 10224,
+      "make_name": "POLESTAR",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    },
+    {
+      "make_id": 10256,
+      "make_name": "CZINGER",
+      "vehicle_type_id": 2,
+      "vehicle_type_name": "Passenger Car"
+    }
+   ]
