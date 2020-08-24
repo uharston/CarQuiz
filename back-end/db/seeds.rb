@@ -5,6 +5,39 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# cars = [
+#     { make: "Toyota", 
+#       model: "Supra"    
+# },
+#     { make: "Toyota", 
+#     model: "Cressida"    
+#     },    
+#     { make: "Toyota", 
+#     model: "Celica"    
+#     },    
+#     { make: "Nissan", 
+#     model: "240sx"    
+#     },    
+#     { make: "Nissan", 
+#     model: "Sentra"    
+#     },    
+#     { make: "Mazda", 
+#     model: "RX7"    
+#     },    
+#     { make: "Mitsubishi", 
+#     model: "EVO"    
+#     },    
+#     { make: "Subaru", 
+#     model: "Impreza"    
+#     },    
+#     { make: "Nissan", 
+#     model: "300zx"    
+#     },    
+#     { make: "Honda", 
+#     model: "NSX"    
+#     }
+# ]
+Car.create(cars)
 # makes = [
 #  {
 #    "make_id": 440,
@@ -955,8 +988,10 @@
 #    "vehicle_type_name": "Passenger Car"
 #  }
 # ]
-
-# Make.create(makes)
+#     makes.each do |m| 
+#         Make.create(make_id: m[:make_id], make_name: m[:make_name])
+#     end
+# Make.create(make_id: makes)
 
 # honda_models = [
 #     {
