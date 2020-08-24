@@ -37,7 +37,37 @@
 #     model: "NSX"    
 #     }
 # ]
-Car.create(cars)
+# Car.create(cars)
+# i = Image.new(url: 'https://media.ed.edmunds-media.com/toyota/cressida/1991/oem/1991_toyota_cressida_sedan_base_fq_oem_1_500.jpg')
+supra = Car.find_by(model: "Supra")
+supra.images.create(url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Toyota_Supra_MK2_red.jpg/1200px-Toyota_Supra_MK2_red.jpg")
+
+celica = Car.find_by(model: "Celica")
+celica.images.create(url: "https://bringatrailer.com/wp-content/uploads/2019/01/1992_toyota_celica_gt-r_right_hand_drive_1547091107f98764daIMG_0998.jpg?fit=940%2C627")
+
+nissan_240sx = Car.find_by(model: "240sx")
+nissan_240sx.images.create(url: "https://bringatrailer.com/wp-content/uploads/2019/11/1992_nissan_240sx_157739095720a357c07493IMG_20191217_123217.jpg?fit=940%2C627")
+
+sentra = Car.find_by(model: "Sentra")
+sentra.images.create(url: "https://hips.hearstapps.com/roa.h-cdn.co/assets/16/13/1459178887-ser.jpg")
+
+rx7 = Car.find_by(model: "RX7")
+rx7.images.create(url: "https://images.caradisiac.com/images/7/6/2/4/177624/S0-mazda-rx-7-fb-1978-1985-598285.jpg")
+
+evo = Car.find_by(model: "EVO")
+evo.images.create(url: "https://i.redd.it/k9ko2j9czp811.jpg")
+
+impreza = Car.find_by(model: "Impreza")
+impreza.images.create(url: "https://media.ed.edmunds-media.com/subaru/impreza/2013/oem/2013_subaru_impreza_sedan_20i-limited-pzev_fq_oem_1_1600.jpg")
+
+nissan_300zx = Car.find_by(model: "300zx")
+nissan_300zx.images.create(url: "https://cimg3.ibsrv.net/ibimg/hgm/2000x1125-1/100/498/1996-nissan-300zx_100498043.jpg")
+
+nsx = Car.find_by(model: "NSX")
+nsx.images.create(url: "https://cdn.motor1.com/images/mgl/LNljj/s1/first-generation-acura-nsx.jpg")
+
+
+
 # makes = [
 #  {
 #    "make_id": 440,
