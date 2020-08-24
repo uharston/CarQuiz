@@ -8,6 +8,6 @@ class CarsController < ApplicationController
 
     def show 
         car = Car.find_by(make: params[:id])
-        render json: car.to_json(only: [:id, :make, :model])
+        render json: car.to_json(include: {images: {only: [:url, :car_id]}}, only: [:id, :make, :model])
     end 
 end
