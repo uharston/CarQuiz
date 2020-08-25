@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_230528) do
+ActiveRecord::Schema.define(version: 2020_08_25_191253) do
 
   create_table "cars", force: :cascade do |t|
     t.string "make"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2020_08_24_230528) do
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "total_games"
+    t.integer "total_correct"
   end
 
   create_table "images", force: :cascade do |t|
