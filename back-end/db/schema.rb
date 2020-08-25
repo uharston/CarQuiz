@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2020_08_25_191253) do
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "total_games"
-    t.integer "total_correct"
+    t.integer "total_games", default: 0
+    t.integer "total_correct", default: 0
   end
 
   create_table "images", force: :cascade do |t|

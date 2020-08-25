@@ -5,6 +5,7 @@ class CarsAdapter {
     }
     //fetch
     fetchQuestions() {
+        
         fetch(this.baseUrl)
         .then(res => res.json())
         .then(this.loadGame)
@@ -19,7 +20,18 @@ class CarsAdapter {
      }
 
      fetchResults(results) {
-         debugger 
+         results.forEach( e => {
+            let carObj = e 
+            let configObj = {
+                method: 'PATCH',
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accepts": "application/json"
+                },
+                body: JSON.stringify(carObj)
+            }
+            fetch(this.baseUrl + `/${Object.keys(e)[0]}`, configObj)
+         })
      }
     
 
