@@ -3,10 +3,23 @@ const yearForm = document.getElementById("year-input")
 const makesForm = document.getElementById("makes-input")
 const startQuiz = document.getElementById("start-quiz")
 const imageContainerDiv = document.getElementById('image-container')
+const quizContainer = document.getElementById("quiz-container")
 const BASEURL = "http://127.0.0.1:3000/cars"
-startQuiz.addEventListener('click', fetchImage)
+startQuiz.addEventListener('click', beginQuiz)
 yearForm.addEventListener('click', sayClick)
 
+function beginQuiz() {
+    fetchImage();
+    switchToAnswerForm();
+}
+
+function switchToAnswerForm() {
+    quizContainer.innerHTML = `<form id="answer-form" method="POST">
+    <label>Guess The Make and Model</label>
+    <input type="text" name="answer"> 
+    <input type="submit">
+</form>`
+}
 function fetchImage() {
     fetch(BASEURL)
     .then(res => res.json())
