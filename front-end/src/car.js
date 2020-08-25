@@ -23,6 +23,11 @@
      }
 
    
+     static clearBoard() {
+        this.game = []
+        this.answered = [] 
+        this.results = [] 
+     }
 
      static nextQuestion() {
         this.game.length === 0 ? endOfQuiz() : this.addImageToDom()

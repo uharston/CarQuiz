@@ -8,6 +8,7 @@ const quizContainer = document.getElementById("quiz-container")
 startQuiz.addEventListener('click', beginQuiz)
 
 function beginQuiz() {
+    Car.clearBoard();
     carsAdapter.fetchQuestions();
     switchToAnswerForm();
 }
@@ -27,7 +28,7 @@ function switchToAnswerForm() {
 
 function takeResponse(e) {
     let answer = e.target.getElementsByTagName('input')[0]
-    let result = Car.answered[0].checkAnswer(answer.value)
+    let result = Car.answered[Car.answered.length - 1].checkAnswer(answer.value)
     Car.results.push(result)
     answer.value = ""
     Car.nextQuestion()
