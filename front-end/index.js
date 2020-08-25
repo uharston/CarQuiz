@@ -6,26 +6,12 @@ const startQuiz = document.getElementById("start-quiz")
 const imageContainerDiv = document.getElementById('image-container')
 const quizContainer = document.getElementById("quiz-container")
 startQuiz.addEventListener('click', beginQuiz)
-// yearForm.addEventListener('click', sayClick)
 
 function beginQuiz() {
     carsAdapter.fetchQuestions();
     switchToAnswerForm();
 }
 
-// function fetchQuestions() {
-//     fetch(BASEURL)
-//     .then(res => res.json())
-//     .then(loadGame)
-// }
-
-function loadGame(e) {
-    for(let i = 0; i < 10; i++) {
-        let selectIndex = Math.floor(Math.random() * e.length)
-        new Car(e[selectIndex])
-     }
-     addImageToDom();
- }
 
 function switchToAnswerForm() {
     quizContainer.innerHTML = 
@@ -44,18 +30,8 @@ function takeResponse(e) {
     let result = Car.answered[0].checkAnswer(answer.value)
     Car.results.push(result)
     answer.value = ""
-    nextQuestion()
+    Car.nextQuestion()
     e.preventDefault()
-}
-
-function nextQuestion() {
-    Car.game.length === 0 ? endOfQuiz() : addImageToDom()
-}
-
-function addImageToDom(i = 0) {
-    let car = Car.game.pop()
-    Car.answered.push(car)
-    imageContainerDiv.innerHTML = `<img src=${car.images[0]['url']} id="quiz-image">`
 }
 
 function endOfQuiz() {
@@ -111,7 +87,7 @@ function endOfQuiz() {
 
 // function fetchCarModels(m) {
 //     console.log("clicked")
-// //    debugger
+// //  
 // //     fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/${m}/vehicleType/car?format=json`)
 // //     .then(resp => resp.json())
 // //     .then(addCarModels)
