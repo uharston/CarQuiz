@@ -5,22 +5,25 @@ class CarsAdapter {
     }
     //fetch
     fetchQuestions() {
-        
         fetch(this.baseUrl)
         .then(res => res.json())
         .then(this.loadGame)
+        
     }
     //instantiate
     loadGame(e) {
         for(let i = 0; i < 10; i++) {
             let selectIndex = Math.floor(Math.random() * e.length)
-            new Car(e[selectIndex])
-         }
-         Car.addImageToDom();
+            let newCar = e.splice(selectIndex, 1)
+            new Car( newCar[0] )
+        }
+        Car.addImageToDom();
      }
-
+     
+     //fetch 
      fetchResults(results) {
          results.forEach( e => {
+            
             let carObj = e 
             let configObj = {
                 method: 'PATCH',
@@ -30,7 +33,16 @@ class CarsAdapter {
                 },
                 body: JSON.stringify(carObj)
             }
+
             fetch(this.baseUrl + `/${Object.keys(e)[0]}`, configObj)
+                .then(res => {
+        
+                    res.json()})
+                .then(resp => {
+        
+
+
+                })
          })
      }
     

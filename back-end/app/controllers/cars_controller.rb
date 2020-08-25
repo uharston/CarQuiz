@@ -13,11 +13,12 @@ class CarsController < ApplicationController
 
     def update 
         car = Car.find_by(id: params[:id])
-        byebug
+        
         if params[params[:id]]
             car.update(total_games: (car.total_games += 1), total_correct: (car.total_correct += 1) )
         else 
             car.update(total_games: (car.total_games += 1) )
         end
+        render json: car.to_json(include: {images: {only: [:url, :car_id]}}, only: [:id, :make, :model, :total_games, :total_games_correct])
     end 
 end
