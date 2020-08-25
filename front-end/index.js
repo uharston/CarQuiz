@@ -1,13 +1,33 @@
 console.log("HELLO URIAH")
 const yearForm = document.getElementById("year-input")
 const makesForm = document.getElementById("makes-input")
+const startQuiz = document.getElementById("start-quiz")
+const imageContainerDiv = document.getElementById('image-container')
+const BASEURL = "http://127.0.0.1:3000/cars"
+startQuiz.addEventListener('click', fetchImage)
 yearForm.addEventListener('click', sayClick)
 // makesForm.addEventListener('click', fetchCarMakes)
+
+function fetchImage() {
+    fetch(BASEURL)
+    .then(res => res.json())
+    .then(addImageToDom)
+}
+
+function addImageToDom(e) {
+    let carIndex = Math.floor(Math.random() * e.length)
+    let imageIndex = Math.floor(Math.random() * e[carIndex].images.length)
+    let imageUrl = e[carIndex].images[imageIndex].url 
+
+    imageContainerDiv.innerHTML = `<img src=${imageUrl} id="quiz-image">`
+   
+}
+
 function sayClick() {
     console.log("clicked yearForm!")
 }
 function fetchCarMakes() {
-    fetch("http://127.0.0.1:3000/makes")
+    fetch("http://127.0.0.1:3000/cars")
     .then(res => res.json())
     .then(addMakes)
 }
