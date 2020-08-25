@@ -21,16 +21,17 @@ function switchToAnswerForm() {
         <input type="submit">
     </form>`
     const answerForm = document.getElementById('answer-form')
-    answerForm.addEventListener('submit', nextQuestion)
+    answerForm.addEventListener('submit', takeResponse)
     
 }
 
-function nextQuestion(e) {
+function takeResponse(e) {
    
-    let answer = e.target.getElementsByTagName('input')[0].value
-    let result = Car.answered[0].checkAnswer(answer)
+    let answer = e.target.getElementsByTagName('input')[0]
+    let result = Car.answered[0].checkAnswer(answer.value)
     Car.results.push(result)
-    
+    answer.value = ""
+   
     e.preventDefault()
     
     console.log("next!!!")
