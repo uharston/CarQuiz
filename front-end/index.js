@@ -17,10 +17,25 @@ function switchToAnswerForm() {
     quizContainer.innerHTML = 
     `<form id="answer-form" method="POST">
         <label>Guess The Make and Model</label>
-        <input type="text" name="answer"> 
+        <input id="answer" type="text" name="answer"> 
         <input type="submit">
     </form>`
+    const answerForm = document.getElementById('answer-form')
+    answerForm.addEventListener('submit', nextQuestion)
+    
 }
+
+function nextQuestion(e) {
+   
+    let answer = e.target.getElementsByTagName('input')[0].value
+    let result = Car.answered[0].checkAnswer(answer)
+    Car.results.push(result)
+    
+    e.preventDefault()
+    
+    console.log("next!!!")
+}
+
 function fetchImage() {
     fetch(BASEURL)
     .then(res => res.json())
@@ -37,6 +52,7 @@ function loadGame(e) {
 
 function addImageToDom(i = 0) {
     let car = Car.game.pop()
+    Car.answered.push(car)
     imageContainerDiv.innerHTML = `<img src=${car.images[0]['url']} id="quiz-image">`
 }
 

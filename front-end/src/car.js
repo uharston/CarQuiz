@@ -1,6 +1,8 @@
  class Car {
      static all = [] 
      static game = [] 
+     static answered = []
+     static results = [] 
 
      constructor({id, make, model, images}) {
          this.id = id 
@@ -12,11 +14,11 @@
          Car.game.push(this)
      }
 
-    //  makeAndModel() {
-    //      return `${this.make} ${this.model}`
-    //  }
+     makeAndModel() {
+         return `${this.make} ${this.model}`
+     }
 
-    //  checkAnswer(answer) {
-
-    //  }
+     checkAnswer(answer) {
+        return this.makeAndModel() === answer ? true : false
+     }
  }
