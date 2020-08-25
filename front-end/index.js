@@ -6,7 +6,6 @@ const imageContainerDiv = document.getElementById('image-container')
 const BASEURL = "http://127.0.0.1:3000/cars"
 startQuiz.addEventListener('click', fetchImage)
 yearForm.addEventListener('click', sayClick)
-// makesForm.addEventListener('click', fetchCarMakes)
 
 function fetchImage() {
     fetch(BASEURL)
