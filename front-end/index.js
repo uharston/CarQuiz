@@ -1,17 +1,31 @@
 console.log("HELLO URIAH")
+const carsAdapter = new CarsAdapter 
 const yearForm = document.getElementById("year-input")
 const makesForm = document.getElementById("makes-input")
 const startQuiz = document.getElementById("start-quiz")
 const imageContainerDiv = document.getElementById('image-container')
 const quizContainer = document.getElementById("quiz-container")
-const BASEURL = "http://127.0.0.1:3000/cars"
 startQuiz.addEventListener('click', beginQuiz)
 // yearForm.addEventListener('click', sayClick)
 
 function beginQuiz() {
-    fetchImage();
+    carsAdapter.fetchQuestions();
     switchToAnswerForm();
 }
+
+// function fetchQuestions() {
+//     fetch(BASEURL)
+//     .then(res => res.json())
+//     .then(loadGame)
+// }
+
+function loadGame(e) {
+    for(let i = 0; i < 10; i++) {
+        let selectIndex = Math.floor(Math.random() * e.length)
+        new Car(e[selectIndex])
+     }
+     addImageToDom();
+ }
 
 function switchToAnswerForm() {
     quizContainer.innerHTML = 
@@ -26,29 +40,25 @@ function switchToAnswerForm() {
 }
 
 function takeResponse(e) {
-   
     let answer = e.target.getElementsByTagName('input')[0]
     let result = Car.answered[0].checkAnswer(answer.value)
     Car.results.push(result)
     answer.value = ""
-   nextQuestion()
-
+    nextQuestion()
     e.preventDefault()
-    
-    console.log("next!!!")
 }
 
 function nextQuestion() {
-    if(Car.game.length === 0) {
-        endOfQuiz(); 
-    }
-    else {
-        addImageToDom();
-    }
+    Car.game.length === 0 ? endOfQuiz() : addImageToDom()
+}
+
+function addImageToDom(i = 0) {
+    let car = Car.game.pop()
+    Car.answered.push(car)
+    imageContainerDiv.innerHTML = `<img src=${car.images[0]['url']} id="quiz-image">`
 }
 
 function endOfQuiz() {
-    
     quizContainer.innerHTML = 
     `<h2> You are done! ${Car.showResults()}</h2><br>
     <button id="start-quiz">Start the Quiz!</button>`
@@ -57,25 +67,11 @@ function endOfQuiz() {
     imageContainerDiv.innerHTML = ""
 }
 
-function fetchImage() {
-    fetch(BASEURL)
-    .then(res => res.json())
-    .then(loadGame)
-}
 
-function loadGame(e) {
-   for(let i = 0; i < 10; i++) {
-       let selectIndex = Math.floor(Math.random() * e.length)
-       new Car(e[selectIndex])
-    }
-    addImageToDom();
-}
 
-function addImageToDom(i = 0) {
-    let car = Car.game.pop()
-    Car.answered.push(car)
-    imageContainerDiv.innerHTML = `<img src=${car.images[0]['url']} id="quiz-image">`
-}
+
+
+
 
 
 
