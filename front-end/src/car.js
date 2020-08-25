@@ -21,4 +21,9 @@
      checkAnswer(answer) {
         return this.makeAndModel() === answer ? true : false
      }
+
+     static showResults() {
+         let correctAnswers = this.results.filter( e => e === true)
+         return `You got ${correctAnswers.length} out of 10 correct.`
+     }
  }

@@ -48,7 +48,13 @@ function nextQuestion() {
 }
 
 function endOfQuiz() {
-    debugger
+    
+    quizContainer.innerHTML = 
+    `<h2> You are done! ${Car.showResults()}</h2><br>
+    <button id="start-quiz">Start the Quiz!</button>`
+    const startQuiz = document.getElementById("start-quiz")
+    startQuiz.addEventListener('click', beginQuiz)
+    imageContainerDiv.innerHTML = ""
 }
 
 function fetchImage() {
