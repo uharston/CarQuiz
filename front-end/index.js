@@ -36,6 +36,8 @@ function takeResponse(e) {
 }
 
 function endOfQuiz() {
+    let results = resultsAsObject()
+    carsAdapter.fetchResults(results);
     quizContainer.innerHTML = 
     `<h2> You are done! ${Car.showResults()}</h2><br>
     <button id="start-quiz">Start the Quiz!</button>`
@@ -43,6 +45,15 @@ function endOfQuiz() {
     startQuiz.addEventListener('click', beginQuiz)
     imageContainerDiv.innerHTML = ""
 }
+
+function resultsAsObject() {
+    const array = []
+    for(let i = 0; i < 10; i++) {
+        array.push( {[Car.answered[i].id]: Car.results[i]} )
+    }
+    return array
+}
+
 
 
 

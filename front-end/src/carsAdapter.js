@@ -17,6 +17,10 @@ class CarsAdapter {
          }
          Car.addImageToDom();
      }
+
+     fetchResults(results) {
+         debugger 
+     }
     
 
 
