@@ -31,10 +31,24 @@ function takeResponse(e) {
     let result = Car.answered[0].checkAnswer(answer.value)
     Car.results.push(result)
     answer.value = ""
-   
+   nextQuestion()
+
     e.preventDefault()
     
     console.log("next!!!")
+}
+
+function nextQuestion() {
+    if(Car.game.length === 0) {
+        endOfQuiz(); 
+    }
+    else {
+        addImageToDom();
+    }
+}
+
+function endOfQuiz() {
+    debugger
 }
 
 function fetchImage() {
