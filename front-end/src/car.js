@@ -44,7 +44,7 @@
         car[key].answer = result 
 
         //  car[key].car.updateScore(result)
-         carsAdapter.updateScore(car)
+        carsAdapter.updateScore(car)
         answer.value = ""
         Car.nextQuestion();
         e.preventDefault();
@@ -53,10 +53,6 @@
      static nextQuestion() {
         this.answered.length === 10 ? endOfQuiz() : this.addImageToDom()
     }
-
-  
-    
-
 
     static showResults() {
         const a = []

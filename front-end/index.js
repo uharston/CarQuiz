@@ -27,21 +27,10 @@ function switchToAnswerForm() {
     answerForm.addEventListener('submit', Car.takeResponse)
 }
 
-// function takeResponse(e) {
-//     let answer = e.target.getElementsByTagName('input')[0]
-//     const car = Car.answered[Car.answered.length - 1]
-//     const key = Object.keys(car)[0]
-//     const result = car[key].car.checkAnswer(answer.value)
-//     car[key].car.updateScore(result)
-//     Car.results.push(result)
-//     answer.value = ""
-//     Car.nextQuestion();
-//     e.preventDefault();
-// }
+
 
 function endOfQuiz() {
-    // let results = resultsAsObject()
-    // carsAdapter.fetchResults(results);
+
     quizContainer.innerHTML = 
     `<h2> You are done! ${Car.showResults()}</h2><br>
     <button id="start-quiz">Start the Quiz!</button>`
@@ -50,13 +39,6 @@ function endOfQuiz() {
     imageContainerDiv.innerHTML = ""
 }
 
-// function resultsAsObject() {
-//     const array = []
-//     for(let i = 0; i < 10; i++) {
-//         array.push( {[Car.answered[i].id]: Car.results[i]} )
-//     }
-//     return array
-// }
 
 
 

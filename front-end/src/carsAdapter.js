@@ -22,7 +22,6 @@ class CarsAdapter {
 
      updateScore(car) {
          
-
          let configObj = {
              method: 'PATCH',
              headers: {
@@ -38,36 +37,6 @@ class CarsAdapter {
             //     return this.takeData(res)})
 
      }
-     
-    //  takeData(data) {
-    //      debugger
-    //  }
-     //fetch 
-    //  fetchResults(results) {
-    //      results.forEach( e => {
-            
-            
-    //         let configObj = {
-    //             method: 'PATCH',
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //                 "Accepts": "application/json"
-    //             },
-    //             body: JSON.stringify(e)
-    //         }
-
-    //         fetch(this.baseUrl + `/${Object.keys(e)[0]}`, configObj)
-    //             .then(res => {
-        
-    //                 res.json()})
-    //             .then(resp => {
-        
-
-
-    //             })
-    //      })
-    //  }
-    
 
 
 }
