@@ -30,7 +30,18 @@
     static addImageToDom(i = 0) {
         let car = this.unanswered.pop()
         this.answered.push(car)
-        imageContainerDiv.innerHTML = `<img src=${car[Object.keys(car)[0]].car.images[0].url} id="quiz-image">`
+        const imageContainerDiv = document.getElementById('image-container')
+        
+        imageContainerDiv.innerHTML = `
+        <div class="w3-card-4 w3-light-grey w3-center w3-hover-shadow" style="max-width: 500px; margin:auto; margin-top: 30px; background: white; padding: 20px;">
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <img src=${car[Object.keys(car)[0]].car.images[0].url} id="quiz-image" class="w3-image">
+                </div>
+            
+            </div>
+        </div>`
+        
     }
 
     static takeResponse(e) {
@@ -63,7 +74,7 @@
         for(let i = 0; i < 10; i++) {
             result.push(Car.answered[i][a[i]].answer)
         }
-        debugger
+     
         let correctAnswers = result.filter( e => e === true)
         return `You got ${correctAnswers.length} out of 10 correct.`
     }

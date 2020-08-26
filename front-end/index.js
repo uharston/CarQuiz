@@ -5,7 +5,6 @@ const imageContainerDiv = document.getElementById('image-container')
 const quizContainer = document.getElementById("quiz-container")
 
 document.addEventListener('DOMContentLoaded', () => {
-
     startQuiz.addEventListener('click', beginQuiz)
 })
 
@@ -17,12 +16,17 @@ function beginQuiz() {
 
 
 function switchToAnswerForm() {
-    quizContainer.innerHTML = 
-    `<form id="answer-form" method="POST">
-        <label>Guess The Make and Model</label>
-        <input id="answer" type="text" name="answer"> 
-        <input type="submit">
-    </form>`
+    const body = document.getElementsByTagName('body')[0]
+    
+    body.innerHTML = 
+    `<div id="image-container">
+        <h2 id="question-title">Type the Make and Model</h2>
+        <form id="answer-form" method="POST">
+            <input id="answer" type="text" name="answer"> 
+            <input type="submit">
+        </form>
+    </div>
+    `
     const answerForm = document.getElementById('answer-form')
     answerForm.addEventListener('submit', Car.takeResponse)
 }
