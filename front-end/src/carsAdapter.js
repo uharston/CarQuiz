@@ -19,32 +19,54 @@ class CarsAdapter {
         }
         Car.addImageToDom();
      }
-     
-     //fetch 
-     fetchResults(results) {
-         results.forEach( e => {
-            
-            let carObj = e 
-            let configObj = {
-                method: 'PATCH',
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accepts": "application/json"
-                },
-                body: JSON.stringify(carObj)
-            }
 
-            fetch(this.baseUrl + `/${Object.keys(e)[0]}`, configObj)
-                .then(res => {
-        
-                    res.json()})
-                .then(resp => {
-        
+     updateScore(car) {
+         
 
+         let configObj = {
+             method: 'PATCH',
+             headers: {
+                 "Content-Type": "application/json",
+                 "Accepts": "application/json"
+             },
+             body: JSON.stringify(car)
+         }
+         fetch(this.baseUrl + `/${Object.keys(car)[0]}`, configObj)
+            // .then(function(resp) {
+            //   return resp.json() })
+            // .then(function(res) {
+            //     return this.takeData(res)})
 
-                })
-         })
      }
+     
+    //  takeData(data) {
+    //      debugger
+    //  }
+     //fetch 
+    //  fetchResults(results) {
+    //      results.forEach( e => {
+            
+            
+    //         let configObj = {
+    //             method: 'PATCH',
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //                 "Accepts": "application/json"
+    //             },
+    //             body: JSON.stringify(e)
+    //         }
+
+    //         fetch(this.baseUrl + `/${Object.keys(e)[0]}`, configObj)
+    //             .then(res => {
+        
+    //                 res.json()})
+    //             .then(resp => {
+        
+
+
+    //             })
+    //      })
+    //  }
     
 
 

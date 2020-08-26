@@ -1,11 +1,13 @@
-console.log("HELLO URIAH")
 const carsAdapter = new CarsAdapter 
-const yearForm = document.getElementById("year-input")
-const makesForm = document.getElementById("makes-input")
+
 const startQuiz = document.getElementById("start-quiz")
 const imageContainerDiv = document.getElementById('image-container')
 const quizContainer = document.getElementById("quiz-container")
-startQuiz.addEventListener('click', beginQuiz)
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    startQuiz.addEventListener('click', beginQuiz)
+})
 
 function beginQuiz() {
     Car.clearBoard();
@@ -22,22 +24,24 @@ function switchToAnswerForm() {
         <input type="submit">
     </form>`
     const answerForm = document.getElementById('answer-form')
-    answerForm.addEventListener('submit', takeResponse)
-    
+    answerForm.addEventListener('submit', Car.takeResponse)
 }
 
-function takeResponse(e) {
-    let answer = e.target.getElementsByTagName('input')[0]
-    let result = Car.answered[Car.answered.length - 1].checkAnswer(answer.value)
-    Car.results.push(result)
-    answer.value = ""
-    Car.nextQuestion()
-    e.preventDefault()
-}
+// function takeResponse(e) {
+//     let answer = e.target.getElementsByTagName('input')[0]
+//     const car = Car.answered[Car.answered.length - 1]
+//     const key = Object.keys(car)[0]
+//     const result = car[key].car.checkAnswer(answer.value)
+//     car[key].car.updateScore(result)
+//     Car.results.push(result)
+//     answer.value = ""
+//     Car.nextQuestion();
+//     e.preventDefault();
+// }
 
 function endOfQuiz() {
-    let results = resultsAsObject()
-    carsAdapter.fetchResults(results);
+    // let results = resultsAsObject()
+    // carsAdapter.fetchResults(results);
     quizContainer.innerHTML = 
     `<h2> You are done! ${Car.showResults()}</h2><br>
     <button id="start-quiz">Start the Quiz!</button>`
@@ -46,13 +50,13 @@ function endOfQuiz() {
     imageContainerDiv.innerHTML = ""
 }
 
-function resultsAsObject() {
-    const array = []
-    for(let i = 0; i < 10; i++) {
-        array.push( {[Car.answered[i].id]: Car.results[i]} )
-    }
-    return array
-}
+// function resultsAsObject() {
+//     const array = []
+//     for(let i = 0; i < 10; i++) {
+//         array.push( {[Car.answered[i].id]: Car.results[i]} )
+//     }
+//     return array
+// }
 
 
 
