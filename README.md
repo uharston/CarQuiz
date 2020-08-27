@@ -9,4 +9,7 @@
     correct answers shouldn't be super strict)
 [ ] Let The User Know if they answered correctly after each question 
     []-> Find the method that loads the individual question 
-    []-> Neaten how class arrays are nested - unanswered
+[X] Neaten how class arrays are nested - unanswered
+    []-> Fixed the affected code from unnested OOJS Car class arrays
+        [X]-> make takeResponse() Car method work with un-nested OOJS Car class arrays
+        []-> make patchRequest work with un-nested OOJS Car class arrays

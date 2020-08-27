@@ -12,8 +12,9 @@ class CarsController < ApplicationController
     end 
 
     def update 
+        
         car = Car.find_by(id: params[:id])
-        if params[params[:id]][:answer]
+        if params[:answer]
             car.update(total_games: (car.total_games += 1), total_correct: (car.total_correct += 1) )
         else 
             car.update(total_games: (car.total_games += 1) )

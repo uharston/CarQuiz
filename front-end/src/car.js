@@ -35,15 +35,12 @@
     }
 
     static takeResponse(e) {
-        //////////////////////////////////////////////////////////////////////
+        
         let answer = e.target.getElementsByTagName('input')[0] //find the user's answer
         const car = Car.answered[Car.answered.length - 1] //find the car to compare answer
         const result = car['car'].checkAnswer(answer.value) // compare answers. return boolean 
         car.answer = result 
-        ///////////////////////////////////////////////////////////////////////
-        
 
-        //  car[key].car.updateScore(result)
         carsAdapter.updateScore(car)
         answer.value = ""
         Car.nextQuestion();

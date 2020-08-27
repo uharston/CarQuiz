@@ -30,7 +30,8 @@ class CarsAdapter {
              },
              body: JSON.stringify(car)
          }
-         fetch(this.baseUrl + `/${Object.keys(car)[0]}`, configObj)
+        
+         fetch(this.baseUrl + `/${car['car'].id}`, configObj)
             // .then(function(resp) {
             //   return resp.json() })
             // .then(function(res) {
