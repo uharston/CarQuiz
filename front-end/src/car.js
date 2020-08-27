@@ -31,18 +31,17 @@
         let car = this.unanswered.pop() //How are the element's structured in this array? {3: {car: Car, answer: ""} } => try this: {id: 3, car: Car, answer: ""}
         this.answered.push(car)
         const imageContainer = document.getElementById('image-container')
-        imageContainer.innerHTML = `<img src=${car[Object.keys(car)[0]].car.images[0].url} id="quiz-image" class="quiz-image-class ">`      
+        imageContainer.innerHTML = `<img src=${Car.answered[this.answered.length - 1].car.images[0].url} id="quiz-image" class="quiz-image-class ">`      
     }
 
     static takeResponse(e) {
         //////////////////////////////////////////////////////////////////////
-        let answer = e.target.getElementsByTagName('input')[0]
-        const car = Car.answered[Car.answered.length - 1] //the last car added to array => the current car in question 
-        const key = Object.keys(car)[0]
-        const result = car[key].car.checkAnswer(answer.value)
-        
+        let answer = e.target.getElementsByTagName('input')[0] //find the user's answer
+        const car = Car.answered[Car.answered.length - 1] //find the car to compare answer
+        const result = car['car'].checkAnswer(answer.value) // compare answers. return boolean 
+        car.answer = result 
         ///////////////////////////////////////////////////////////////////////
-        car[key].answer = result 
+        
 
         //  car[key].car.updateScore(result)
         carsAdapter.updateScore(car)
