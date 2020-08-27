@@ -17,3 +17,6 @@
         [X]-> make takeResponse() Car method work with un-nested OOJS Car class arrays
         [X]-> make patchRequest work with un-nested OOJS Car class arrays
         [X]-> make showResults() and displayResults() work with un-nested OOJS Car class arrays
+        [X]-> fix endOfQuiz() errors
+
+    [X]-> Make new API endpoint that only sends 10 random cars from the quiz

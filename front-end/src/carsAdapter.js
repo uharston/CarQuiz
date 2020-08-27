@@ -1,27 +1,22 @@
 class CarsAdapter {
 
     constructor() {
-        this.baseUrl = "http://127.0.0.1:3000/cars"
+        this.baseUrl = "http://127.0.0.1:3000"
     }
     //fetch
     fetchQuestions() {
-        fetch(this.baseUrl)
+        fetch(this.baseUrl + "/game")
         .then(res => res.json())
         .then(this.loadGame)
         
     }
     //instantiate
     loadGame(e) {
-        for(let i = 0; i < 10; i++) {
-            let selectIndex = Math.floor(Math.random() * e.length)
-            let newCar = e.splice(selectIndex, 1)
-            new Car( newCar[0] )
-        }
+        e.forEach( newCar => new Car( newCar));
         Car.addImageToDom();
      }
 
      updateScore(car) {
-         
          let configObj = {
              method: 'PATCH',
              headers: {
@@ -31,7 +26,7 @@ class CarsAdapter {
              body: JSON.stringify(car)
          }
         
-         fetch(this.baseUrl + `/${car['car'].id}`, configObj)
+         fetch(this.baseUrl + `/cars/${car['car'].id}`, configObj)
             // .then(function(resp) {
             //   return resp.json() })
             // .then(function(res) {
