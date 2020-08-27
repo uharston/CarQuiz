@@ -52,23 +52,13 @@
     }
 
     static showResults() {
-        const a = []
-        const result = [] 
-        for(let i = 0; i < 10; i++) {
-            a.push(Object.keys(this.answered[i])[0])
-        }
-        for(let i = 0; i < 10; i++) {
-            result.push(Car.answered[i][a[i]].answer)
-        }
-     
-        let correctAnswers = result.filter( e => e === true)
+        let correctAnswers = Car.answered.filter( e => e.answer === true )
         return `You got ${correctAnswers.length} out of 10 correct.`
     }
 
     static clearBoard() {
         this.unanswered = []
-        this.answered = [] 
-        this.results = [] 
+        this.answered = []  
      }
 
  }

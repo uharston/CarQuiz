@@ -77,21 +77,16 @@ function endOfQuiz() {
 
 function displayResults() {
     const last10Questions = Car.all.slice(-10)
-    debugger
-    let arr = [] 
-    for(let i = 0; i < last10Questions.length; i++) {  
-    arr.push(`
-    <div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " style="max-width: 500px; margin:auto; margin-top: 30px; background: rgba(192, 192, 192, 0.726); padding: 20px;">
-        <div id="image-container"><img src="${last10Questions[i][0].images[0].url}" id="quiz-image" class="results-image-class ></div><br><br>
-           Correct Answer: ${last10Questions[i][0].makeAndModel()}
-        </div>
-    </div>`)
-    }
-    return arr.join(' ')
+    return last10Questions.map( e => {
+        return `<div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " style="max-width: 500px; margin:auto; margin-top: 30px; background: rgba(192, 192, 192, 0.726); padding: 20px;">
+            <div id="image-container"><img src="${e.images[0].url}" id="quiz-image" class="results-image-class ></div><br><br>
+            Correct Answer: ${e.makeAndModel()}
+            </div>
+        </div>`
+    })
 }
 
-function last10Questions() {
-}
+
 
 
 /* <div  class="w3-third w3-margin-bottom">
