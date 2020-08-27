@@ -30,18 +30,8 @@
     static addImageToDom(i = 0) {
         let car = this.unanswered.pop()
         this.answered.push(car)
-        const imageContainerDiv = document.getElementById('image-container')
-        
-        imageContainerDiv.innerHTML = `
-        <div class="w3-card-4 w3-light-grey w3-center w3-hover-shadow" style="max-width: 500px; margin:auto; margin-top: 30px; background: white; padding: 20px;">
-            <div class="mapouter">
-                <div class="gmap_canvas">
-                    <img src=${car[Object.keys(car)[0]].car.images[0].url} id="quiz-image" class="w3-image">
-                </div>
-            
-            </div>
-        </div>`
-        
+        const imageContainer = document.getElementById('image-container')
+        imageContainer.innerHTML = `<img src=${car[Object.keys(car)[0]].car.images[0].url} id="quiz-image" class="quiz-image-class ">`      
     }
 
     static takeResponse(e) {

@@ -10,4 +10,10 @@ body, html {
   background-position: center;
   background-size: cover;
   }
+.quiz-image-class {
+    object-fit: none;
+
+    width: 435px;
+    height: 337px;
+}
 
