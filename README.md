@@ -7,3 +7,6 @@
 [] Allow answers in variety of formats
     (Answers should be case insensitive, 
     correct answers shouldn't be super strict)
+[ ] Let The User Know if they answered correctly after each question 
+    []-> Find the method that loads the individual question 
+    []-> Neaten how class arrays are nested - unanswered

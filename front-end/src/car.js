@@ -10,8 +10,8 @@
          this.model = model 
          this.images = images 
 
-         Car.all.push([this])
-         Car.unanswered.push( { [this.id]: { "car": this, "answer": "" } } )
+         Car.all.push( this )
+         Car.unanswered.push( { "car": this, "answer": "" } )
          
      }
 
@@ -28,7 +28,7 @@
      }
      
     static addImageToDom(i = 0) {
-        let car = this.unanswered.pop()
+        let car = this.unanswered.pop() //How are the element's structured in this array? {3: {car: Car, answer: ""} } => try this: {id: 3, car: Car, answer: ""}
         this.answered.push(car)
         const imageContainer = document.getElementById('image-container')
         imageContainer.innerHTML = `<img src=${car[Object.keys(car)[0]].car.images[0].url} id="quiz-image" class="quiz-image-class ">`      
