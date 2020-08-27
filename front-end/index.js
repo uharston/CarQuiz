@@ -32,6 +32,7 @@ function switchToAnswerForm() {
                     <input id="answer" class="w3-input" type="text" name="answer" placeholder="Make and Model" > <br>
                     <input class="w3-button w3-block w3-green" type="submit">
                 </form>
+                <div id="card-content'></div>
             </div>
         </div>
     </div>`

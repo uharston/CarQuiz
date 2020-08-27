@@ -50,10 +50,34 @@
     static showStats(data) {
    
         const statsWrapper = document.createElement('div')
+        statsWrapper.id = 'stats-wrapper'
         const answerWrapper = document.getElementById('answer-wrapper')
-        statsWrapper.innerHTML = answerWrapper.innerHTML 
+        statsWrapper.innerHTML = answerWrapper.innerHTML //make a copy of answerform styling 
+        this.buildStatsHtml(data, statsWrapper)
+        // debugger
+        // this.percentageCorrectStats(data) 
+    }
+
+    static buildStatsHtml(data, stats) {
+        
+        const image = Car.answered[Car.answered.length - 2]['car']['images'][0].url
         debugger
-        this.percentageCorrectStats(data) 
+        stats.innerHTML = `
+            <div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " style="max-width: 500px; margin:auto; margin-top: 30px; background: rgba(192, 192, 192, 0.726); padding: 20px;">
+                <h2 class="w3-text-black" id="question-title">Here is the answer!</h2>
+                <div id="image-container">
+                    <img src="${image}" id="quiz-image" class="results-image-class">
+                </div><br>
+
+                <div id="card-content'>
+                    <h4>${this.percentageCorrectStats(data)} of people get this answer correct</h4>
+                </div>
+                    <form id="answer-form" method="POST">
+                        <input class="w3-button w3-block w3-green" value="Next Question" type="submit">
+                    </form>
+                    
+                </div>
+            </div>`  
     }
 
     static percentageCorrectStats(car) {

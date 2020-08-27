@@ -19,7 +19,7 @@ body, html {
 }
 
 .results-image-class {
-    /* object-fit: cover;  */
+    object-fit: cover; 
 
     max-width: 50%;
 }
