@@ -35,16 +35,30 @@
     }
 
     static takeResponse(e) {
-        
+        e.preventDefault();
         let answer = e.target.getElementsByTagName('input')[0] //find the user's answer
         const car = Car.answered[Car.answered.length - 1] //find the car to compare answer
         const result = car['car'].checkAnswer(answer.value) // compare answers. return boolean 
-        car.answer = result 
-
-        carsAdapter.updateScore(car)
-        answer.value = ""
+        car.answer = result
+        answer.value = "" //reset the input field for the next question 
+        carsAdapter.updateScore(car) //send the answer boolean to the back-end 
+        
+        // displayAnswer()
         Car.nextQuestion();
-        e.preventDefault();
+    }
+
+    static showStats(data) {
+   
+        const statsWrapper = document.createElement('div')
+        const answerWrapper = document.getElementById('answer-wrapper')
+        statsWrapper.innerHTML = answerWrapper.innerHTML 
+        debugger
+        this.percentageCorrectStats(data) 
+    }
+
+    static percentageCorrectStats(car) {
+        const num = (car.total_correct / car.total_games) * 100
+        return `${num}%`
     }
 
      static nextQuestion() {

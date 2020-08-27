@@ -27,10 +27,10 @@ class CarsAdapter {
          }
         
          fetch(this.baseUrl + `/cars/${car['car'].id}`, configObj)
-            // .then(function(resp) {
-            //   return resp.json() })
-            // .then(function(res) {
-            //     return this.takeData(res)})
+            .then(function(resp) {
+               return resp.json()  } )
+            .then(function(res) {
+                return Car.showStats(res)})
 
      }
 

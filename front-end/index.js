@@ -24,14 +24,15 @@ function switchToAnswerForm() {
         <a href="#" class="w3-bar-item w3-button w3-hover-none w3-text-grey w3-hover-text-white w3-left"><img src="logo/isolated-monochrome-white.svg" alt="LOGO" width="77" height="25" id="img-logo"></a>
         <a href="#" id="start-quiz" class="w3-bar-item w3-button w3-hover-none w3-text-black w3-hover-text-white w3-right">Start Over?</a>
     </div>
-    
-    <div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " style="max-width: 500px; margin:auto; margin-top: 30px; background: rgba(192, 192, 192, 0.726); padding: 20px;">
-        <h2 class="w3-text-black" id="question-title">Do you know this car?</h2>
-        <div id="image-container"></div><br>
-            <form id="answer-form" method="POST">
-                <input id="answer" class="w3-input" type="text" name="answer" placeholder="Make and Model" > <br>
-                <input class="w3-button w3-block w3-green" type="submit">
-            </form>
+    <div id="answer-wrapper" >
+        <div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " style="max-width: 500px; margin:auto; margin-top: 30px; background: rgba(192, 192, 192, 0.726); padding: 20px;">
+            <h2 class="w3-text-black" id="question-title">Do you know this car?</h2>
+            <div id="image-container"></div><br>
+                <form id="answer-form" method="POST">
+                    <input id="answer" class="w3-input" type="text" name="answer" placeholder="Make and Model" > <br>
+                    <input class="w3-button w3-block w3-green" type="submit">
+                </form>
+            </div>
         </div>
     </div>`
 
