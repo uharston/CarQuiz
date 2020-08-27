@@ -4,7 +4,6 @@ class CarsController < ApplicationController
         cars = Car.all 
         render json: cars.to_json(include: {images: {only: [:url, :car_id]}}, only: [:id, :make, :model])
         # render json: categories.to_json(include: {items: {only: [:name, :description, :price]}}, only: :name)
-
     end 
 
     def show 
