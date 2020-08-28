@@ -34,7 +34,6 @@ class CarsAdapter {
      }
 
      fetchAllCars() {
-         
          fetch(this.baseUrl + '/cars')
             .then(resp => resp.json())
             .then(this.initializeCars)

@@ -21,7 +21,7 @@
      }
 
      static renderCars() {
-       debugger
+        switchToMainCssDesign() 
      }
 
      makeAndModel() {
@@ -125,7 +125,7 @@
             endOfQuiz()
         } 
         else  {
-            switchToAnswerForm();
+            switchToMainCssDesign();
             Car.addImageToDom()
         }
     }

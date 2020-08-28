@@ -8,9 +8,9 @@
     (Answers should be case insensitive, 
     correct answers shouldn't be super strict)
 
-[ ] Let The User Know if they answered correctly after each question 
+[X] Let The User Know if they answered correctly after each question 
     [X]-> Find the method that loads the individual question => Car.takeResponse(e)
-        []-> carsAdapter.updateScore(car) patch request now sends update info back in order to render so stats to user after question
+        [X]-> carsAdapter.updateScore(car) patch request now sends update info back in order to render so stats to user after question
 
     [X]-> Neaten how class arrays are nested - unanswered
 
@@ -23,10 +23,14 @@
 [X]-> Make new API endpoint that only sends 10 random cars from the quiz
 
 [] Make a study for the quiz area that displays all of the cars 
-    []-> Make a Study the Cars Button on the landing page 
+    [X]-> Make a Study the Cars Button on the landing page 
+    [X]-> Fetch all the cars
+    []-> Clear the homepage
+    []-> Render the blank page where that cars index will go with nav bar
 
 
 Fetch Request
 1. [X] fetch 10 Cars for the quiz 
-2. [] update correct answers after each question, display stats regarding how many users get this question correct
+2. [X] update correct answers after each question, display stats regarding how many users get this question correct
 3. [] fetch all of the cars so users can study for the quiz 
+4. [] allow user to like and dislike questions 
