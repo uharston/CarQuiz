@@ -4,15 +4,24 @@
      static answered = []
      
 
-     constructor({id, make, model, images}) {
+     constructor({id, make, model, images, forQuiz}) {
          this.id = id 
          this.make = make 
          this.model = model 
          this.images = images 
-
-         Car.all.push( this )
-         Car.unanswered.push( { "car": this, "answer": "" } )
+         this.forQuiz = forQuiz
+        
+         if(this.forQuiz) {
+            Car.unanswered.push( { "car": this, "answer": "" } )
+         }
+         else {
+            Car.all.push( this )
+         }
          
+     }
+
+     static renderCars() {
+       debugger
      }
 
      makeAndModel() {

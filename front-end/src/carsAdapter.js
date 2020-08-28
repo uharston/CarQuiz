@@ -12,7 +12,7 @@ class CarsAdapter {
     }
     //instantiate
     loadGame(e) {
-        e.forEach( newCar => new Car( newCar));
+        e.forEach(newCar => new Car( Object.assign(newCar, {forQuiz: true} ) ));
         Car.addImageToDom();
      }
      //patch 
@@ -32,6 +32,20 @@ class CarsAdapter {
             .then(function(res) {
                 return Car.showStats(res)})
      }
+
+     fetchAllCars() {
+         
+         fetch(this.baseUrl + '/cars')
+            .then(resp => resp.json())
+            .then(this.initializeCars)
+     }
+
+     initializeCars(e) {
+        e.forEach( newCar => new Car( Object.assign(newCar, {forQuiz: false} ) ) );
+        Car.renderCars(); 
+     }
+
+     
 
 
 }

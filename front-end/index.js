@@ -6,10 +6,17 @@ const quizContainer = document.getElementById("quiz-container")
 const body = document.getElementsByTagName('body')[0]
 const contentWrapper = document.getElementById('content-wrapper')
 
+const studyButton = document.getElementById("study-cars")
+studyButton.addEventListener('click', displayCars)
+
 
 document.addEventListener('DOMContentLoaded', () => {
     startQuiz.addEventListener('click', beginQuiz)
 })
+
+function displayCars() {
+    carsAdapter.fetchAllCars(); 
+}
 
 function beginQuiz() {
     Car.clearBoard();
