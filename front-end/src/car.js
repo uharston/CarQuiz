@@ -89,9 +89,7 @@
     }
 
     static findLastImage() {
-        let i 
-        this.answered.length === 1 ? i = 1 :  i = 2
-        return this.answered[this.answered.length - i]['car']['images'][0].url
+        return this.answered[this.answered.length - 1]['car']['images'][0].url
     }
 
 
