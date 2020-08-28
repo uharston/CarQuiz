@@ -22,7 +22,8 @@ body, html {
 .results-image-class {
     object-fit: cover; 
 
-    max-width: 50%;
+    width: 435px;
+    height: 337px;
 }
 
 #grad {
