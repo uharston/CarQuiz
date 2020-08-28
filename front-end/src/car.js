@@ -64,6 +64,7 @@
     }
     
     static buildStatsHtml(data) {
+        
         const statsWrapper = document.createElement('div')
         statsWrapper.id = 'stats-wrapper'
      
@@ -71,7 +72,8 @@
       
         statsWrapper.innerHTML = `
             <div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " style="max-width: 500px; margin:auto; margin-top: 30px; background: rgba(192, 192, 192, 0.726); padding: 20px;">
-                <h2 class="w3-text-black" id="question-title">${this.findLastCar()}</h2>
+                <h2 class="w3-text-black" id="question-title">${this.rightOrWrong()}</h2>
+                <h3 class="w3-text-black" id="question-title">This is a ${this.findLastCar()}</h3>
                 <div id="image-container">
                     <img src="${image}" id="quiz-image" class="results-image-class">
                 </div><br>
@@ -94,6 +96,10 @@
 
     static findLastCar() {
         return this.answered[this.answered.length - 1]['car'].makeAndModel()    
+    }
+
+    static rightOrWrong() {
+        return this.answered[this.answered.length - 1]['answer'] ? "Correct!" : "Wrong Answer" 
     }
 
 
