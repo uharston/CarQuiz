@@ -38,7 +38,7 @@
      }
 
      static carAllHtml() {
-        return Car.all.map( e => {
+        const carCards = Car.all.map( e => {
            return `
            <div id="car-${e.id}" class="w3-third w3-margin-bottom">
                 <div class="w3-card-4">
@@ -50,7 +50,15 @@
                     </div>
                 </div>
             </div>`
-        }).join(' ')
+        })
+
+        const title = `<br>
+        <div class="w3-container w3-center">
+            <h1 class="w3-jumbo">We have ${Car.all.length} cars you can study!</h1><br>
+            <hr class="w3-border-grey" style="margin:auto;width:40%"><br>
+        </div><br>`
+        carCards.unshift(title)
+        return carCards.join(' ')
      }
 
 
@@ -98,6 +106,7 @@
         
         const statsForm = document.getElementById('stats-form')
         statsForm.addEventListener('submit', this.nextQuestion)
+        
 
         
         
@@ -149,14 +158,18 @@
         return `${Math.ceil(num)}%`
     }
 
+    static percentageCorrectQuiz() {
+        return Math.floor( (Car.answered.filter( e => e.answer === true ).length / 10) * 100 )
+    }
+
      static nextQuestion() {
         //  e.preventDefault(); 
-        
+       
         if(Car.answered.length === 10) {
             endOfQuiz()
         } 
         else  {
-            switchToMainCssDesign();
+            switchToMainCssDesign('quiz');
             Car.addImageToDom()
         }
     }

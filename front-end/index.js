@@ -5,14 +5,22 @@ const imageContainerDiv = document.getElementById('image-container')
 const quizContainer = document.getElementById("quiz-container")
 const body = document.getElementsByTagName('body')[0]
 const contentWrapper = document.getElementById('content-wrapper')
-
 const studyButton = document.getElementById("study-cars")
 studyButton.addEventListener('click', displayCars)
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    startQuiz.addEventListener('click', beginQuiz)
+    fireEventListeners();
 })
+
+function fireEventListeners() {
+    
+    const studyButton = document.getElementById("study-cars")
+    studyButton.addEventListener('click', displayCars)
+    const startQuiz = document.getElementById("start-quiz")
+    startQuiz.addEventListener('click', beginQuiz)
+
+}
 
 function displayCars() {
     carsAdapter.fetchAllCars(); 
@@ -28,18 +36,108 @@ function beginQuiz() {
 function  switchToMainCssDesign(render) {
     body.innerHTML = 
     `<div id="grad" class="w3-bar">
-        <a href="#" class="w3-bar-item w3-button w3-hover-none w3-text-grey w3-hover-text-white w3-left"><img src="logo/isolated-monochrome-white.svg" alt="LOGO" width="77" height="25" id="img-logo"></a>
-        <a href="#" id="start-quiz" class="w3-bar-item w3-button w3-hover-none w3-text-black w3-hover-text-white w3-right">Start Over?</a>
+    <a href="#" class="w3-bar-item w3-button w3-hover-none w3-text-grey w3-hover-text-white w3-left"><img src="logo/isolated-monochrome-white.svg" alt="LOGO" width="77" height="25" id="img-logo"></a>
+    <a href="#" id="start-quiz" class="w3-bar-item w3-button w3-hover-none w3-text-black w3-hover-text-white w3-right">Start Over?</a>
     </div>
     <div id='content-wrapper'>
-
+    
     </div>`
     if(render === 'quiz') {
         answerForm(); 
     }
+    else if(render === 'results') {
+        quizResults(); 
+    }
     
 
 }
+
+ function quizResults() {
+     body.innerHTML = `
+     <div id="myModal" class="modal">
+     <!-- Modal content -->
+         <div class="modal-content">
+             <div class="modal-header">
+                <h2 class="w3-left">CarQuiz Report</h2>
+                 <span class=" w3-right close">&times;</span>
+             </div>
+             <div class="modal-body w3-text-white w3-jumbo">
+                 <p>Some text in the Modal Body</p>
+                 <p>Some other text...</p>
+             </div>
+             <div class="modal-footer">
+                 <h3 class="w3-center" > Thanks For Playing </h3>
+             </div>
+         </div>
+     </div>
+    <div class="bgimg2 w3-display-container">
+        <div class="w3-display-middle">
+            <div class="w3-center w3-text-white">
+                <div class="w3-xxxlarge">Thanks for Playing</div><br><br>
+                    <div id="quiz-container" class="text-center w3-animate-top">
+                        <img class="result-img" src="logo/default-monochrome-white.svg" alt="LOGO" width="770" height="200" id="img-logo">
+                        
+                            <span id="myBtn" class="w3-button w3-black w3-opacity"> See your report here</span><br><br><br><br>
+                            <button id="start-quiz" class="w3-button w3-round w3-xxlarge w3-opacity w3-black">Play Again</button>
+                            <button id="study-cars" class="w3-button w3-round w3-xxlarge w3-opacity w3-black">Study the Cars</button>
+                            <button id="add-cars" class="w3-button w3-round w3-xxlarge w3-opacity w3-black">Add Cars</button>
+                           
+                    </div>
+            
+        </div>
+    </div>
+</div>`
+debugger
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+fireEventListeners();
+
+
+ }
+
+// function quizResults() {
+//     debugger
+//     const resultsWrapper = document.createElement('div')
+//     resultsWrapper.id = 'results-wrapper'
+//     resultsWrapper.innerHTML = `
+//     <div class="bgimg2 w3-display-container">
+//         <div class="w3-display-middle">
+//             <div class="w3-center">
+//                 <h1>Isn't Car Spotting Awesome?</h1>
+//                 <p>You got a ${Car.percentageCorrectQuiz()}%. See you report here</p>
+//                 <p>Try another quiz or study the cars</p>
+//                 <p>Add some cars to the quiz lineup</p>
+//             </div>
+//         </div>
+//     </div>`
+// debugger
+//     const contentWrapper = document.getElementById('content-wrapper')
+//     contentWrapper.appendChild(resultsWrapper)
+// }
+
+
 
 function answerForm() {
     const answerWrapper = document.createElement('div')
@@ -68,34 +166,37 @@ function answerForm() {
 
 
 function endOfQuiz() {
-    let answerCard = document.getElementById('answer-card')
-    body.removeChild(answerCard)
-    let resultDiv = document.createElement('div')
-    resultDiv.innerHTML = 
-    `<div class="w3-container w3-center">
-        <h1 class="w3-jumbo">The Results Are In!</h1>
-        <hr class="w3-border-grey" style="margin:auto;width:40%"><br>
-    </div>
+    // debugger
+    // lastPage()
+    switchToMainCssDesign('results'); 
+    // let answerCard = document.getElementById('answer-card')
+    // body.removeChild(answerCard)
+    // let resultDiv = document.createElement('div')
+    // resultDiv.innerHTML = 
+    // `<div class="w3-container w3-center">
+    //     <h1 class="w3-jumbo">The Results Are In!</h1>
+    //     <hr class="w3-border-grey" style="margin:auto;width:40%"><br>
+    // </div>
 
-    <h2> ${Car.showResults()}</h2><br>
+    // <h2> ${Car.showResults()}</h2><br>
 
-    <div id="results-container" >
-        ${displayResults()}
-    </div>`
+    // <div id="results-container" >
+    //     ${displayResults()}
+    // </div>`
     
-    body.appendChild(resultDiv)
+    // body.appendChild(resultDiv)
 
 
-    const resultsContainer = document.getElementById('results-container')
+//     const resultsContainer = document.getElementById('results-container')
  
    
 
 
-//     resultsDiv.appendChild
-    // <button id="start-quiz">Start the Quiz!</button>`
-    const startQuiz = document.getElementById("start-quiz")
-    startQuiz.addEventListener('click', beginQuiz)
-    // imageContainerDiv.innerHTML = ""
+// //     resultsDiv.appendChild
+//     // <button id="start-quiz">Start the Quiz!</button>`
+//     const startQuiz = document.getElementById("start-quiz")
+//     startQuiz.addEventListener('click', beginQuiz)
+//     // imageContainerDiv.innerHTML = ""
     
 
     

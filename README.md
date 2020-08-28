@@ -27,7 +27,9 @@
     [X]-> Fetch all the cars
     [X]-> Clear the homepage
     [X]-> Render the blank page where that cars index will go with nav bar
-[] Polish the Css on study page 
+[X] Polish the Css on study page 
+
+[] Make a results page 
 
 
 Fetch Request
