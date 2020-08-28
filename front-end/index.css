@@ -26,6 +26,18 @@ body, html {
     height: 337px;
 }
 
+.index-image-class {
+    /* object-fit: cover; */
+    width: 90%;
+    height: auto;
+}
+
+.img-container {
+    height: 25vw;
+    /* width: 40vw;  */
+    overflow: hidden;
+}
+
 #grad {
     background: linear-gradient(to right, rgb(0, 0, 0) , rgb(110, 110, 110));
   }

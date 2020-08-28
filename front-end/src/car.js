@@ -20,9 +20,40 @@
          
      }
 
+
+
      static renderCars() {
-        switchToMainCssDesign() 
+        switchToMainCssDesign();
+        
+        const contentWrapper = document.getElementById('content-wrapper')
+        let div = document.createElement('div')
+        div.className = "w3-row-padding"
+        // Car.all.forEach( e => {
+        //     let car = document.createElement('div')
+        //     car.id = `car-${e.id}`
+     
+        div.innerHTML = this.carAllHtml()
+        contentWrapper.appendChild(div)
+        
      }
+
+     static carAllHtml() {
+        return Car.all.map( e => {
+           return `
+           <div id="car-${e.id}" class="w3-third w3-margin-bottom">
+                <div class="w3-card-4">
+                    <div class="w3-container w3-center">
+                    <h3 class="">${e.makeAndModel()}</h3>
+                    <div class=" img-container"> 
+                        <img src="${e.images[0].url}" class="index-image-class" > 
+                    </div>
+                    </div>
+                </div>
+            </div>`
+        }).join(' ')
+     }
+
+
 
      makeAndModel() {
          return `${this.make} ${this.model}`
