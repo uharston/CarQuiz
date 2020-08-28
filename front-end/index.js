@@ -19,7 +19,6 @@ function beginQuiz() {
 
 
 function switchToAnswerForm() {
-  
     body.innerHTML = 
     `<div id="grad" class="w3-bar">
         <a href="#" class="w3-bar-item w3-button w3-hover-none w3-text-grey w3-hover-text-white w3-left"><img src="logo/isolated-monochrome-white.svg" alt="LOGO" width="77" height="25" id="img-logo"></a>

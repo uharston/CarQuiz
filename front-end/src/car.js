@@ -71,13 +71,13 @@
       
         statsWrapper.innerHTML = `
             <div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " style="max-width: 500px; margin:auto; margin-top: 30px; background: rgba(192, 192, 192, 0.726); padding: 20px;">
-                <h2 class="w3-text-black" id="question-title">Here is the answer!</h2>
+                <h2 class="w3-text-black" id="question-title">${this.findLastCar()}</h2>
                 <div id="image-container">
                     <img src="${image}" id="quiz-image" class="results-image-class">
                 </div><br>
 
                 <div id='card-content'>
-                    <h4>${this.percentageCorrectStats(data)} of people get this answer correct</h4>
+                    <h4><strong>${this.percentageCorrectStats(data)}</strong> of people get this answer correct</h4>
                 </div>
                     <form id="stats-form" method="POST">
                         <input class="w3-button w3-block w3-green" value="Next Question" type="submit">
@@ -92,11 +92,15 @@
         return this.answered[this.answered.length - 1]['car']['images'][0].url
     }
 
+    static findLastCar() {
+        return this.answered[this.answered.length - 1]['car'].makeAndModel()    
+    }
+
 
 
     static percentageCorrectStats(car) {
         const num = (car.total_correct / car.total_games) * 100
-        return `${num}%`
+        return `${Math.ceil(num)}%`
     }
 
      static nextQuestion() {
