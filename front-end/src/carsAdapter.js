@@ -15,7 +15,7 @@ class CarsAdapter {
         e.forEach( newCar => new Car( newCar));
         Car.addImageToDom();
      }
-
+     //patch 
      updateScore(car) {
          let configObj = {
              method: 'PATCH',
@@ -31,7 +31,6 @@ class CarsAdapter {
                return resp.json()  } )
             .then(function(res) {
                 return Car.showStats(res)})
-
      }
 
 

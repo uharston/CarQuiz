@@ -44,26 +44,32 @@
         carsAdapter.updateScore(car) //send the answer boolean to the back-end 
         
         // displayAnswer()
-        Car.nextQuestion();
+        // Car.nextQuestion();
     }
 
     static showStats(data) {
+        const statsHtml = this.buildStatsHtml(data)
+ 
+        const answerWrapper = document.getElementById('answer-wrapper')
+        answerWrapper.innerHTML = ""
+
+        const contentWrapper = document.getElementById('content-wrapper')
+        contentWrapper.appendChild(statsHtml)
         
+        const statsForm = document.getElementById('stats-form')
+        statsForm.addEventListener('submit', this.nextQuestion)
+
+        
+        
+    }
+    
+    static buildStatsHtml(data) {
         const statsWrapper = document.createElement('div')
         statsWrapper.id = 'stats-wrapper'
-        const answerWrapper = document.getElementById('answer-wrapper')
-        statsWrapper.innerHTML = answerWrapper.innerHTML //make a copy of answerform styling 
-        const statsHtml = this.buildStatsHtml(data, statsWrapper)
-        answerWrapper.innerHTML = ""
-        const contentWrapper = document.getElementById('content-wrapper')
-        contentWrapper.appendChild(statsWrapper)
-        
-
-    }
-
-    static buildStatsHtml(data, stats) {
-        const image = Car.answered[Car.answered.length - 2]['car']['images'][0].url
-        return stats.innerHTML = `
+     
+        const image = this.findLastImage()
+      
+        statsWrapper.innerHTML = `
             <div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " style="max-width: 500px; margin:auto; margin-top: 30px; background: rgba(192, 192, 192, 0.726); padding: 20px;">
                 <h2 class="w3-text-black" id="question-title">Here is the answer!</h2>
                 <div id="image-container">
@@ -73,12 +79,19 @@
                 <div id='card-content'>
                     <h4>${this.percentageCorrectStats(data)} of people get this answer correct</h4>
                 </div>
-                    <form id="answer-form" method="POST">
+                    <form id="stats-form" method="POST">
                         <input class="w3-button w3-block w3-green" value="Next Question" type="submit">
                     </form>
                     
                 </div>
             </div>`  
+            return statsWrapper
+    }
+
+    static findLastImage() {
+        let i 
+        this.answered.length === 1 ? i = 1 :  i = 2
+        return this.answered[this.answered.length - i]['car']['images'][0].url
     }
 
 
@@ -89,7 +102,15 @@
     }
 
      static nextQuestion() {
-        this.answered.length === 10 ? endOfQuiz() : this.addImageToDom()
+        //  e.preventDefault(); 
+        
+        if(Car.answered.length === 10) {
+            endOfQuiz()
+        } 
+        else  {
+            switchToAnswerForm();
+            Car.addImageToDom()
+        }
     }
 
     static showResults() {
