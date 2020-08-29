@@ -43,10 +43,13 @@
            <div id="car-${e.id}" class="w3-third w3-margin-bottom">
                 <div class="w3-card-4">
                     <div class="w3-container w3-center">
-                    <h3 class="">${e.makeAndModel()}</h3>
-                    <div class=" img-container"> 
-                        <img src="${e.images[0].url}" class="index-image-class" > 
-                    </div>
+                        <h3 class="">${e.makeAndModel()}</h3>
+                        <div class=" img-container"> 
+                            <img src="${e.images[0].url}" class="index-image-class" > <br>
+                            
+                            <span class="w3-left w3-button">Like</span> <span class="w3-right w3-button">Dislike</span>
+                        </div>
+                        
                     </div>
                 </div>
             </div>`
@@ -86,6 +89,7 @@
         e.preventDefault();
         let answer = e.target.getElementsByTagName('input')[0] //find the user's answer
         const car = Car.answered[Car.answered.length - 1] //find the car to compare answer
+        car.userAnswer = answer.value //stores the user's answer with the car for the game
         const result = car['car'].checkAnswer(answer.value) // compare answers. return boolean 
         car.answer = result
         answer.value = "" //reset the input field for the next question 

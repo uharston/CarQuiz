@@ -35,14 +35,17 @@ function beginQuiz() {
 
 function  switchToMainCssDesign(render) {
     body.innerHTML = 
-    `<div id="grad" class="w3-bar">
+    `<div class="w3-display-container">
+    <div id="grad" class="w3-bar">
     <a href="#" class="w3-bar-item w3-button w3-hover-none w3-text-grey w3-hover-text-white w3-left"><img src="logo/isolated-monochrome-white.svg" alt="LOGO" width="77" height="25" id="img-logo"></a>
     <a href="#" id="start-quiz" class="w3-bar-item w3-button w3-hover-none w3-text-black w3-hover-text-white w3-right">Start Over?</a>
     </div>
     <div id='content-wrapper'>
     
+    </div>
     </div>`
     if(render === 'quiz') {
+        body.firstElementChild.classList.add('bgimg3') //add background image 
         answerForm(); 
     }
     else if(render === 'results') {
@@ -58,18 +61,24 @@ function  switchToMainCssDesign(render) {
      <!-- Modal content -->
          <div class="modal-content">
              <div class="modal-header">
-                <h2 class="w3-left">CarQuiz Report</h2>
+               <img src="logo/isolated-monochrome-white.svg" alt="LOGO" width="77" height="25" id="img-logo"> 
                  <span class=" w3-right close">&times;</span>
              </div>
-             <div class="modal-body w3-text-white w3-jumbo">
-                 <p>Some text in the Modal Body</p>
-                 <p>Some other text...</p>
-             </div>
+             <table class="modal-body w3-table w3-bordered">
+                <tr>
+                    <th>No.</th>
+                    <th>Correct Answer</th>
+                    <th>Your Answer</th>
+                </tr>
+                ${statsTable()}
+             </table>
+             
+
              <div class="modal-footer">
                  <h3 class="w3-center" > Thanks For Playing </h3>
              </div>
          </div>
-     </div>
+     </div><br><br>
     <div class="bgimg2 w3-display-container">
         <div class="w3-display-middle">
             <div class="w3-center w3-text-white">
@@ -87,7 +96,7 @@ function  switchToMainCssDesign(render) {
         </div>
     </div>
 </div>`
-debugger
+
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
@@ -117,6 +126,17 @@ fireEventListeners();
 
  }
 
+ function statsTable() {
+    return Car.answered.map( (e, i) => {
+        return `
+        <tr>
+            <td>${i + 1}.</td>
+            <td>${e.car.makeAndModel()}</td>
+            <td>${e.userAnswer}</td>
+      </tr>`
+    }).join(' ')
+}
+
 // function quizResults() {
 //     debugger
 //     const resultsWrapper = document.createElement('div')
@@ -140,6 +160,7 @@ fireEventListeners();
 
 
 function answerForm() {
+    
     const answerWrapper = document.createElement('div')
     answerWrapper.id = 'answer-wrapper'
     answerWrapper.innerHTML = 
