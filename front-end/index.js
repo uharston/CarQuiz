@@ -97,34 +97,33 @@ function  switchToMainCssDesign(render) {
     </div>
 </div>`
 
-var modal = document.getElementById("myModal");
+    let modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+    // Get the button that opens the modal
+    let btn = document.getElementById("myBtn");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+    // Get the <span> element that closes the modal
+    let span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+    modal.style.display = "block";
+    }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
     modal.style.display = "none";
-  }
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    fireEventListeners();
+
 }
-fireEventListeners();
-
-
- }
 
  function statsTable() {
     return Car.answered.map( (e, i) => {
@@ -137,26 +136,6 @@ fireEventListeners();
     }).join(' ')
 }
 
-// function quizResults() {
-//     debugger
-//     const resultsWrapper = document.createElement('div')
-//     resultsWrapper.id = 'results-wrapper'
-//     resultsWrapper.innerHTML = `
-//     <div class="bgimg2 w3-display-container">
-//         <div class="w3-display-middle">
-//             <div class="w3-center">
-//                 <h1>Isn't Car Spotting Awesome?</h1>
-//                 <p>You got a ${Car.percentageCorrectQuiz()}%. See you report here</p>
-//                 <p>Try another quiz or study the cars</p>
-//                 <p>Add some cars to the quiz lineup</p>
-//             </div>
-//         </div>
-//     </div>`
-// debugger
-//     const contentWrapper = document.getElementById('content-wrapper')
-//     contentWrapper.appendChild(resultsWrapper)
-// }
-
 
 
 function answerForm() {
@@ -164,9 +143,8 @@ function answerForm() {
     const answerWrapper = document.createElement('div')
     answerWrapper.id = 'answer-wrapper'
     answerWrapper.innerHTML = 
-    `
-    <div id="answer-wrapper" >
-        <div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " style="max-width: 500px; margin:auto; margin-top: 30px; background: rgba(192, 192, 192, 0.726); padding: 20px;">
+    `<div id="answer-wrapper" >
+        <div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " style="max-width: 500px; margin:auto; margin-bottom: 30px; margin-top: 30px; background: rgba(192, 192, 192, 0.726); padding: 20px;">
             <h2 class="w3-text-black" id="question-title">Do you know this car?</h2>
             <div id="image-container"></div><br>
                 <form id="answer-form" method="POST">
@@ -184,45 +162,6 @@ function answerForm() {
     answerForm.addEventListener('submit', Car.takeResponse)
 }
 
-
-
-function endOfQuiz() {
-    // debugger
-    // lastPage()
-    switchToMainCssDesign('results'); 
-    // let answerCard = document.getElementById('answer-card')
-    // body.removeChild(answerCard)
-    // let resultDiv = document.createElement('div')
-    // resultDiv.innerHTML = 
-    // `<div class="w3-container w3-center">
-    //     <h1 class="w3-jumbo">The Results Are In!</h1>
-    //     <hr class="w3-border-grey" style="margin:auto;width:40%"><br>
-    // </div>
-
-    // <h2> ${Car.showResults()}</h2><br>
-
-    // <div id="results-container" >
-    //     ${displayResults()}
-    // </div>`
-    
-    // body.appendChild(resultDiv)
-
-
-//     const resultsContainer = document.getElementById('results-container')
- 
-   
-
-
-// //     resultsDiv.appendChild
-//     // <button id="start-quiz">Start the Quiz!</button>`
-//     const startQuiz = document.getElementById("start-quiz")
-//     startQuiz.addEventListener('click', beginQuiz)
-//     // imageContainerDiv.innerHTML = ""
-    
-
-    
-}
-
 function displayResults() {
     const last10Questions = Car.all.slice(-10)
     return last10Questions.map( e => {
@@ -237,14 +176,7 @@ function displayResults() {
 
 
 
-/* <div  class="w3-third w3-margin-bottom">
-<div  class="w3-card-4">
-    <div id="results-div" class="w3-container w3-center">
-        <img src="${Car.all[i][0].images[0].url}" class="results-image-class" ><br>
-        Correct Answer: ${Car.all[i][0].makeAndModel()}
-    </div>
-</div>
-</div>} */
+
 
 
 

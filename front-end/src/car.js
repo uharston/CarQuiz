@@ -1,53 +1,79 @@
  class Car {
-     static all = [] 
-     static unanswered = [] 
-     static answered = []
-     
+    static all = [] 
+    static unanswered = [] 
+    static answered = []
+    
 
-     constructor({id, make, model, images, forQuiz}) {
-         this.id = id 
-         this.make = make 
-         this.model = model 
-         this.images = images 
-         this.forQuiz = forQuiz
+    constructor({id, make, model, images, forQuiz, likes, dislikes}) {
+        this.id = id 
+        this.make = make 
+        this.model = model 
+        this.images = images 
+        this.forQuiz = forQuiz
+        this.likes = likes 
+        this.dislikes = dislikes 
+    
+        if(this.forQuiz) {
+        Car.unanswered.push( { "car": this, "answer": "" } )
+        }
+        else {
+        Car.all.push( this )
+        }
         
-         if(this.forQuiz) {
-            Car.unanswered.push( { "car": this, "answer": "" } )
-         }
-         else {
-            Car.all.push( this )
-         }
-         
-     }
+    }
+
+    makeAndModel() {
+        return `${this.make} ${this.model}`
+    }
+
+    checkAnswer(answer) {
+       return this.makeAndModel() === answer ? true : false
+    }
+
+    updateScore(score) {
+        debugger
+    }
 
 
 
-     static renderCars() {
+    static renderCars() {
         switchToMainCssDesign();
         
         const contentWrapper = document.getElementById('content-wrapper')
         let div = document.createElement('div')
         div.className = "w3-row-padding"
-        // Car.all.forEach( e => {
-        //     let car = document.createElement('div')
-        //     car.id = `car-${e.id}`
-     
+
+        
         div.innerHTML = this.carAllHtml()
         contentWrapper.appendChild(div)
         
-     }
+        this.likesAndDislikesListeners()
 
-     static carAllHtml() {
+    
+    }
+
+    static likesAndDislikesListeners() {
+        Car.all.forEach( e => {
+            let likes = document.getElementById(`like-button-${e.id}`)
+            let dislikes = document.getElementById(`dislike-button-${e.id}`)
+            likes.addEventListener('click', carsAdapter.patchLikes)
+            dislikes.addEventListener('click', carsAdapter.patchDislikes)
+        })
+    }
+
+
+
+    static carAllHtml() {
         const carCards = Car.all.map( e => {
-           return `
-           <div id="car-${e.id}" class="w3-third w3-margin-bottom">
+            return `
+            <div id="car-${e.id}" class="w3-third w3-margin-bottom">
                 <div class="w3-card-4">
                     <div class="w3-container w3-center">
                         <h3 class="">${e.makeAndModel()}</h3>
-                        <div class=" img-container"> 
+                        <div class="img-container"> 
                             <img src="${e.images[0].url}" class="index-image-class" > <br>
                             
-                            <span class="w3-left w3-button">Like</span> <span class="w3-right w3-button">Dislike</span>
+                            <span id='like-button-${e.id}' class="w3-left w3-button like-button">Like - <span id="like-amount-${e.id}"> ${e.likes}</span></span> <span id='dislike-button-${e.id}' class="w3-right w3-button">Dislike - <span id="dislike-amount-${e.id}"> ${e.dislikes}</span></span>
                         </div>
                         
                     </div>
@@ -55,28 +81,18 @@
             </div>`
         })
 
-        const title = `<br>
-        <div class="w3-container w3-center">
+        const title = `
+        <br><div class="w3-container w3-center">
             <h1 class="w3-jumbo">We have ${Car.all.length} cars you can study!</h1><br>
             <hr class="w3-border-grey" style="margin:auto;width:40%"><br>
         </div><br>`
         carCards.unshift(title)
         return carCards.join(' ')
-     }
+    }
 
 
 
-     makeAndModel() {
-         return `${this.make} ${this.model}`
-     }
 
-     checkAnswer(answer) {
-        return this.makeAndModel() === answer ? true : false
-     }
-
-     updateScore(score) {
-         debugger
-     }
      
     static addImageToDom(i = 0) {
         let car = this.unanswered.pop() //How are the element's structured in this array? {3: {car: Car, answer: ""} } => try this: {id: 3, car: Car, answer: ""}
@@ -95,8 +111,7 @@
         answer.value = "" //reset the input field for the next question 
         carsAdapter.updateScore(car) //send the answer boolean to the back-end 
         
-        // displayAnswer()
-        // Car.nextQuestion();
+
     }
 
     static showStats(data) {
@@ -110,10 +125,6 @@
         
         const statsForm = document.getElementById('stats-form')
         statsForm.addEventListener('submit', this.nextQuestion)
-        
-
-        
-        
     }
     
     static buildStatsHtml(data) {
@@ -154,9 +165,7 @@
     static rightOrWrong() {
         return this.answered[this.answered.length - 1]['answer'] ? "Correct!" : "Wrong Answer" 
     }
-
-
-
+    
     static percentageCorrectStats(car) {
         const num = (car.total_correct / car.total_games) * 100
         return `${Math.ceil(num)}%`
@@ -170,7 +179,7 @@
         //  e.preventDefault(); 
        
         if(Car.answered.length === 10) {
-            endOfQuiz()
+            switchToMainCssDesign('results'); 
         } 
         else  {
             switchToMainCssDesign('quiz');
@@ -188,4 +197,4 @@
         this.answered = []  
      }
 
- }
+}

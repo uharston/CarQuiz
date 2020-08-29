@@ -15,35 +15,88 @@ class CarsAdapter {
         e.forEach(newCar => new Car( Object.assign(newCar, {forQuiz: true} ) ));
         Car.addImageToDom();
      }
-     //patch 
-     updateScore(car) {
-         let configObj = {
-             method: 'PATCH',
-             headers: {
-                 "Content-Type": "application/json",
-                 "Accepts": "application/json"
-             },
-             body: JSON.stringify(car)
-         }
-        
-         fetch(this.baseUrl + `/cars/${car['car'].id}`, configObj)
-            .then(function(resp) {
-               return resp.json()  } )
-            .then(function(res) {
-                return Car.showStats(res)})
-     }
+    //patch 
+    updateScore(car) {
+        let configObj = {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+                "Accepts": "application/json"
+            },
+            body: JSON.stringify(car)
+        }
+    
+        fetch(this.baseUrl + `/cars/${car['car'].id}`, configObj)
+        .then(function(resp) {
+            return resp.json()  } )
+        .then(function(res) {
+            return Car.showStats(res)})
+    }
 
-     fetchAllCars() {
-         fetch(this.baseUrl + '/cars')
-            .then(resp => resp.json())
-            .then(this.initializeCars)
-     }
+    fetchAllCars() {
+        fetch(this.baseUrl + '/cars')
+        .then(resp => resp.json())
+        .then(this.initializeCars)
+    }
 
-     initializeCars(e) {
+    initializeCars(e) {
         e.forEach( newCar => new Car( Object.assign(newCar, {forQuiz: false} ) ) );
         Car.renderCars(); 
-     }
+    }
 
+    patchLikes(e) {
+       
+        const id = e.target.parentElement.parentElement.parentElement.parentElement.id.split('-').slice(-1)[0]
+        carsAdapter.optomisticLikeUpdate(id); 
+        const like = {like: 1}
+
+        let configObj = {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+                "Accepts": "application/json"
+            },
+            body: JSON.stringify(like)
+
+        }
+        
+        fetch(carsAdapter.baseUrl + `/cars/${id}`, configObj)
+            .then(resp => resp.json())
+            .then(carsAdapter.updateLikes)
+    }
+
+    patchDislikes(e) {
+        const id = e.target.parentElement.parentElement.parentElement.parentElement.id.split('-').slice(-1)[0]  
+        carsAdapter.dislikeDomUpdate(id); 
+        const dislike = {dislike: 1}
+        let configObj = {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+                "Accepts": "application/json"
+            },
+            body: JSON.stringify(dislike)
+
+        }
+        
+        fetch(carsAdapter.baseUrl + `/cars/${id}`, configObj)
+            //    .then(resp => resp.json())
+            //    .then(carsAdapter.updateDislikes)
+    }
+
+
+    optomisticLikeUpdate(id) {
+        const likeForUpdate = document.getElementById(`like-amount-${id}`)
+        likeForUpdate.innerText = parseInt(likeForUpdate.innerText) + 1
+    }
+
+
+ 
+    dislikeDomUpdate(id) {
+
+        const dislikeForUpdate = document.getElementById(`dislike-amount-${id}`)
+        dislikeForUpdate.innerText = parseInt(dislikeForUpdate.innerText) + 1
+    }
      
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_191253) do
+ActiveRecord::Schema.define(version: 2020_08_29_185616) do
 
   create_table "cars", force: :cascade do |t|
     t.string "make"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2020_08_25_191253) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "total_games", default: 0
     t.integer "total_correct", default: 0
+    t.integer "likes", default: 0
+    t.integer "dislikes", default: 0
   end
 
   create_table "images", force: :cascade do |t|
