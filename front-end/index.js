@@ -37,8 +37,7 @@ function  switchToMainCssDesign(render) {
     body.innerHTML = 
     `<div class="w3-display-container">
     <div id="grad" class="w3-bar">
-    <a href="#" class="w3-bar-item w3-button w3-hover-none w3-text-grey w3-hover-text-white w3-left"><img src="logo/isolated-monochrome-white.svg" alt="LOGO" width="77" height="25" id="img-logo"></a>
-    <a href="#" id="start-quiz" class="w3-bar-item w3-button w3-hover-none w3-text-black w3-hover-text-white w3-right">Start Over?</a>
+    <a href="" class="w3-bar-item w3-button w3-hover-none w3-text-grey w3-hover-text-white w3-left"><img src="logo/isolated-monochrome-white.svg" alt="LOGO" width="77" height="25" id="img-logo"></a>
     </div>
     <div id='content-wrapper'>
     
@@ -89,7 +88,6 @@ function  switchToMainCssDesign(render) {
                             <span id="myBtn" class="w3-button w3-black w3-opacity"> See your report here</span><br><br><br><br>
                             <button id="start-quiz" class="w3-button w3-round w3-xxlarge w3-opacity w3-black">Play Again</button>
                             <button id="study-cars" class="w3-button w3-round w3-xxlarge w3-opacity w3-black">Study the Cars</button>
-                            <button id="add-cars" class="w3-button w3-round w3-xxlarge w3-opacity w3-black">Add Cars</button>
                            
                     </div>
             
@@ -144,7 +142,7 @@ function answerForm() {
     answerWrapper.id = 'answer-wrapper'
     answerWrapper.innerHTML = 
     `<div id="answer-wrapper" >
-        <div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " style="max-width: 500px; margin:auto; margin-bottom: 30px; margin-top: 30px; background: rgba(192, 192, 192, 0.726); padding: 20px;">
+        <div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " style="max-width: 500px; margin:auto;  margin-top: 30px; background: rgba(192, 192, 192, 0.726); padding: 20px;">
             <h2 class="w3-text-black" id="question-title">Do you know this car?</h2>
             <div id="image-container"></div><br>
                 <form id="answer-form" method="POST">
@@ -172,6 +170,9 @@ function displayResults() {
         </div>`
     })
 }
+
+/* <button id="add-cars" class="w3-button w3-round w3-xxlarge w3-opacity w3-black">Add Cars</button> */
+
 
 
 

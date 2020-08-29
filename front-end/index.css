@@ -12,6 +12,7 @@ body, html {
   background-position: center;
   background-size: cover;
   }
+  
 .bgimg2 {
 background-image: url('https://www.stancenation.com/wp-content/uploads/2019/01/Mean-Toyota-Chaser-BMW-Inspired-63.jpg');
 min-height: 100%;
@@ -21,7 +22,7 @@ background-size: cover;
 }
 .bgimg3 {
     background-image: url('https://images.caradisiac.com/logos/0/8/8/6/190886/S0-un-milliardaire-russe-rachete-le-nurburgring-107922.jpg');
-    min-height: 100%;
+    min-height: 110%;
     background-position: center;
     background-size: cover;
     
@@ -63,6 +64,10 @@ background-size: cover;
     /* width: 40vw;  */
     overflow: hidden;
 }
+
+/* #answer-card {
+  height: 75%;
+} */
 
 #grad {
     background: linear-gradient(to right, rgb(0, 0, 0) , rgb(110, 110, 110));
