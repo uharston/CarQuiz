@@ -1,4 +1,5 @@
 const carsAdapter = new CarsAdapter 
+// const nhtsaApiAdapter = new NhtsaApiAdapter
 
 const startQuiz = document.getElementById("start-quiz")
 const imageContainerDiv = document.getElementById('image-container')
@@ -19,11 +20,17 @@ function fireEventListeners() {
     studyButton.addEventListener('click', displayCars)
     const startQuiz = document.getElementById("start-quiz")
     startQuiz.addEventListener('click', beginQuiz)
+    const addCarsButton = document.getElementById('add-cars')
+    addCarsButton.addEventListener('click', addCarsPage)
 
 }
 
 function displayCars() {
     carsAdapter.fetchAllCars(); 
+}
+
+function addCarsPage() {
+    switchToMainCssDesign('addCars');
 }
 
 function beginQuiz() {
@@ -50,9 +57,41 @@ function  switchToMainCssDesign(render) {
     else if(render === 'results') {
         quizResults(); 
     }
+    else if(render === 'addCars') {
+        addCarForm(); 
+    }
     
 
 }
+
+function addCarForm() {
+    document.getElementById('content-wrapper').innerHTML = `<div class="w3-card-4 vertical-center" style="width: 50%; margin: auto; margin-top: 25px; background: white; padding: 10px;">
+    <div class="w3-container">
+       <h1 class="w3-center">Add Car</h1>
+        <div class='w3-center'>
+            <select name="make" id="make" class='w3-input' style="width: 30%; display: inline;">
+                    <option id='make-option' value="">Make</option>
+            </select>
+            <select name="make" id="model" class='w3-input' style="width: 30%; display: inline;" >
+                <option value="">Model</option>
+            </select>
+            <input class='w3-input' style="width: 30%; display: inline;" placeholer="Image URL">
+            <button class="w3-button">Add Car</button>
+        </div>
+    </div>
+</div>`
+    fetchMakes(); 
+
+}
+
+function fetchMakes() {
+    const make = document.getElementById('make-option')
+    fetch('https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json')
+        .then(resp => resp.json())
+        .then(renderMakes)
+}
+
+
 
  function quizResults() {
      body.innerHTML = `
@@ -95,32 +134,30 @@ function  switchToMainCssDesign(render) {
     </div>
 </div>`
 
+    reportCardListeners(); 
+    fireEventListeners();
+
+}
+
+function reportCardListeners() {
+
     let modal = document.getElementById("myModal");
-
-    // Get the button that opens the modal
     let btn = document.getElementById("myBtn");
-
-    // Get the <span> element that closes the modal
     let span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks the button, open the modal 
     btn.onclick = function() {
     modal.style.display = "block";
     }
 
-    // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
     modal.style.display = "none";
     }
 
-    // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     }
-    fireEventListeners();
-
 }
 
  function statsTable() {
@@ -169,9 +206,18 @@ function displayResults() {
             </div>
         </div>`
     })
+
+
 }
 
-/* <button id="add-cars" class="w3-button w3-round w3-xxlarge w3-opacity w3-black">Add Cars</button> */
+
+
+function renderMakes(resp) {
+    const makeOptions = resp.Results.map( car => `<option id="${car.MakeId}">${car.MakeName}</option>`).join(' ')
+    const makes = document.getElementById('makes')
+    makes.innerHTML = makeOptions 
+}
+
 
 
 

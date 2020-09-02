@@ -73,8 +73,12 @@
                         <div class="img-container"> 
                             <img src="${e.images[0].url}" class="index-image-class" > <br>
                             
-                            <span id='like-button-${e.id}' class="w3-left w3-button like-button">Like - <span id="like-amount-${e.id}"> ${e.likes}</span></span> <span id='dislike-button-${e.id}' class="w3-right w3-button">Dislike - <span id="dislike-amount-${e.id}"> ${e.dislikes}</span></span>
                         </div>
+                        <button id='like-button-${e.id}' class="w3-left w3-button w3-large like-button"><i class="far fa-thumbs-up"></i><span id="like-amount-${e.id}" class="w3-left" > ${e.likes}</span>  </button>
+                        
+                        <button id='dislike-button-${e.id}' class="w3-right w3-button w3-large dislike-button"><i class="far fa-thumbs-down"></i> <span id="dislike-amount-${e.id}" class="w3-right" > ${e.dislikes}</span> </button>
+                        
+
                         
                     </div>
                 </div>
