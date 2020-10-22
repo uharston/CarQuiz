@@ -14,12 +14,11 @@
         this.dislikes = dislikes 
     
         if(this.forQuiz) {
-        Car.unanswered.push( { "car": this, "answer": "" } )
+            Car.unanswered.push( { "car": this, "answer": "" } )
         }
         else {
-        Car.all.push( this )
+            Car.all.push( this )
         }
-        
     }
 
     makeAndModel() {
@@ -30,26 +29,52 @@
        return this.makeAndModel() === answer ? true : false
     }
 
-    updateScore(score) {
-        debugger
+    // updateScore(score) {
+    //     
+    // }
+
+
+
+    static renderCars(arg) {
+        if(!arg) {
+            switchToMainCssDesign();
+            this.renderAllCarsBody(); 
+        }
+        else {
+            this.renderAllCarsBody(arg);
+        }
     }
 
-
-
-    static renderCars() {
-        switchToMainCssDesign();
+    static renderAllCarsBody(arg) {
         
         const contentWrapper = document.getElementById('content-wrapper')
+        contentWrapper.innerHTML = "" //make sure the div is clear of content from filters 
+        
         let div = document.createElement('div')
         div.className = "w3-row-padding"
 
         
-        div.innerHTML = this.carAllHtml()
+        div.innerHTML = this.carAllHtml(arg)
         contentWrapper.appendChild(div)
-        
+
+        //sort and reset button listeners 
+        const sortCarsButton = document.getElementById('sort-cars')
+        sortCarsButton.addEventListener("click", this.handleSortClick)
+        const resetCarsButtion = document.getElementById('reset-sort')
+        resetCarsButtion.addEventListener('click', this.handleResetClick)
+
         this.likesAndDislikesListeners()
 
     
+    }
+
+
+    static handleResetClick() {
+        Car.renderAllCarsBody()
+    }
+
+    static handleSortClick() {
+        Car.renderAllCarsBody('sorted')
     }
 
     static likesAndDislikesListeners() {
@@ -61,10 +86,32 @@
         })
     }
 
+    static sortedCars() {
+        const sorted = Car.all.slice(0)
+        return sorted.sort( (a, b) => {
+            const nameA = a.make
+            const nameB = b.make
+            if (nameA < nameB) {
+              return -1;
+            }
+            if (nameA > nameB) {
+              return 1;
+            }
+            return 0;
+          });
+    }
 
 
-    static carAllHtml() {
-        const carCards = Car.all.map( e => {
+    static carAllHtml(arg) {
+        let collection
+        if(arg === 'sorted') {
+            collection = this.sortedCars();
+        }
+        else {
+            collection = Car.all 
+        }
+        
+        const carCards = collection.map( e => {
             return `
             <div id="car-${e.id}" class="w3-third w3-margin-bottom">
                 <div class="w3-card-4">
@@ -89,9 +136,16 @@
         <br><div class="w3-container w3-center">
             <h1 class="w3-jumbo">We have ${Car.all.length} cars you can study!</h1><br>
             <hr class="w3-border-grey" style="margin:auto;width:40%"><br>
+            <div class="w3-left">
+                <span>Order:</span> 
+                <button id="sort-cars"> Alphabetical </button>
+            </div>
+            <button id="reset-sort" class="w3-right"> Reset </button>
         </div><br>`
         carCards.unshift(title)
         return carCards.join(' ')
+
+    
     }
 
 

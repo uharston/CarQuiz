@@ -6,13 +6,12 @@ class CarsAdapter {
     //fetch
     fetchQuestions() {
         fetch(this.baseUrl + "/game")
-        .then(res => res.json())
-        .then(this.loadGame)
-        
+          .then( res => res.json() )
+          .then( this.loadGame )  
     }
     //instantiate
     loadGame(e) {
-        e.forEach(newCar => new Car( Object.assign(newCar, {forQuiz: true} ) ));
+        e.forEach(newCar => new Car( Object.assign( newCar, { forQuiz: true } ) ));
         Car.addImageToDom();
      }
     //patch 
@@ -80,8 +79,8 @@ class CarsAdapter {
         }
         
         fetch(carsAdapter.baseUrl + `/cars/${id}`, configObj)
-            //    .then(resp => resp.json())
-            //    .then(carsAdapter.updateDislikes)
+               .then(resp => resp.json())
+               .then(carsAdapter.updateDislikes)
     }
 
 

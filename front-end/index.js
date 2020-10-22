@@ -1,5 +1,4 @@
 const carsAdapter = new CarsAdapter 
-// const nhtsaApiAdapter = new NhtsaApiAdapter
 
 const startQuiz = document.getElementById("start-quiz")
 const imageContainerDiv = document.getElementById('image-container')
