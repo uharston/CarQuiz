@@ -3,7 +3,7 @@ class CarsController < ApplicationController
     def index 
         cars = Car.all 
         render json: cars.to_json(include: {images: {only: [:url, :car_id]}}, only: [:id, :make, :model, :likes, :dislikes])
-        # render json: categories.to_json(include: {items: {only: [:name, :description, :price]}}, only: :name)
+        # renderjson: categories.to_json(include: {items: {only: [:name, :description, :price]}}, only: :name)
     end 
 
     def game 
