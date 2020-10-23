@@ -1,8 +1,9 @@
 # require 'pry'
 class CarsController < ApplicationController
     def index 
-        cars = Car.all 
-        render json: cars.to_json(include: {images: {only: [:url, :car_id]}}, only: [:id, :make, :model, :likes, :dislikes])
+        render plain: "Helly Jelly"
+        # cars = Car.all 
+        # render json: cars.to_json(include: {images: {only: [:url, :car_id]}}, only: [:id, :make, :model, :likes, :dislikes])
         # renderjson: categories.to_json(include: {items: {only: [:name, :description, :price]}}, only: :name)
     end 
 
