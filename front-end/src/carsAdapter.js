@@ -1,7 +1,7 @@
 class CarsAdapter {
 
     constructor() {
-        this.baseUrl = "http://127.0.0.1:3000"
+        this.baseUrl = "https://salty-brook-99944.herokuapp.com"
     }
     //fetch
     fetchQuestions() {
