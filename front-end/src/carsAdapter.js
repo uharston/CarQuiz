@@ -33,7 +33,7 @@ class CarsAdapter {
     }
 
     fetchAllCars() {
-        fetch(this.baseUrl + '/cars')
+        fetch(this.baseUrl)
         .then(resp => resp.json())
         .then(this.initializeCars)
     }
