@@ -1,39 +1,69 @@
 ![Car Quiz Logo](./front-end/logo/isolated-monochrome-black.svg)
 
-[X] Save Game Stats to DB 
-    (There should be information on total games played,
-    how often each car is guessed correctly, 
-    what car is most wrong )
-[] Allow answers in variety of formats
-    (Answers should be case insensitive, 
-    correct answers shouldn't be super strict)
+A fun quiz that test your car identifying abilities.  
 
-[X] Let The User Know if they answered correctly after each question 
-    [X]-> Find the method that loads the individual question => Car.takeResponse(e)
-        [X]-> carsAdapter.updateScore(car) patch request now sends update info back in order to render so stats to user after question
+🚗 [Click here](https://carquiz.netlify.app) 🚗 to go to the live build.
 
-    [X]-> Neaten how class arrays are nested - unanswered
+# Getting Started 
 
-    [X]-> Fixed the affected code from unnested OOJS Car class arrays
-        [X]-> make takeResponse() Car method work with un-nested OOJS Car class arrays
-        [X]-> make patchRequest work with un-nested OOJS Car class arrays
-        [X]-> make showResults() and displayResults() work with un-nested OOJS Car class arrays
-        [X]-> fix endOfQuiz() errors
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-[X]-> Make new API endpoint that only sends 10 random cars from the quiz
+## Prerequisites
 
-[X] Make a study for the quiz area that displays all of the cars 
-    [X]-> Make a Study the Cars Button on the landing page 
-    [X]-> Fetch all the cars
-    [X]-> Clear the homepage
-    [X]-> Render the blank page where that cars index will go with nav bar
-[X] Polish the Css on study page 
+You must be running `Ruby 2.6.1` and `Rails 6.0.3.2` . One way to accomplish this is to use [Ruby Version Manger(rvm)](https://rvm.io/rvm/install).
 
-[] Make a results page 
+    rvm install "ruby-2.6.1"
+    rvm use 2.6.1
+    gem install rails -v 6.0.3.2
 
 
-Fetch Request
-1. [X] fetch 10 Cars for the quiz 
-2. [X] update correct answers after each question, display stats regarding how many users get this question correct
-3. [X] fetch all of the cars so users can study for the quiz 
-4. [] allow user to like and dislike questions 
+## Installation 
+
+### Start the Back End 
+
+Fork and clone the repository using your prefered method. 
+
+    $ cd back-end 
+
+Then load all of the dependencies...
+
+    $ bundle install 
+
+Create a development database 
+
+    $ rake db:create 
+
+    $ rake db:seed 
+
+    $ rake db:migrate 
+
+Start local server 
+
+    $ rails server
+
+## Start the Front End 
+
+    Open the `index.html` inside the `front-end` folder. 
+
+# Tech Stack Used 
+
+    - Ruby 2.6.1 
+    - Rails 6.0.3.2
+    - Bundler 
+    - HTML5
+    - CSS3
+    - w3.css
+    - Sqlite - Development Database
+    - Postgres - Production Database 
+    - Heroku - Deployment Service 
+
+# Contributing
+
+Contributions are always welcome.
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests.
+
+# License
+
+This project is licensed under the [MIT](https://opensource.org/licenses/MIT) License
+
