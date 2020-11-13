@@ -43,7 +43,7 @@ Start local server
 
 ## Start the Front End 
 
-    Open the `index.html` inside the `front-end` folder. 
+Open the `index.html` inside the `front-end` folder. 
 
 # Tech Stack Used 
 
