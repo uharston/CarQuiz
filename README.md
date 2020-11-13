@@ -21,7 +21,7 @@ You must be running `Ruby 2.6.1` and `Rails 6.0.3.2` . One way to accomplish thi
 
 ### Start the Back End 
 
-Fork and clone the repository using your prefered method. 
+Fork and clone the repository using your preferred method. 
 
     $ cd back-end 
 
