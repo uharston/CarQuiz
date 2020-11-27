@@ -1,0 +1,24 @@
+h1 {
+  font-family: "Raleway", sans-serif; }
+
+.bgimg {
+  background-image: url("https://wallpaperaccess.com/full/244510.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.btn-ctn {
+  text-align: center; }
+
+#homepage-logo {
+  display: block;
+  width: 70vw; }
+
+.homepage-btns {
+  font-size: 4vw; }
+
+/*# sourceMappingURL=test.css.map */
