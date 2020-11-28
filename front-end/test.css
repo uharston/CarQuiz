@@ -19,6 +19,10 @@ h1 {
   width: 70vw; }
 
 .homepage-btns {
-  font-size: 4vw; }
+  font-size: 5vw; }
+
+@media (min-width: 768px) {
+  .homepage-btns {
+    font-size: 3vw; } }
 
 /*# sourceMappingURL=test.css.map */

@@ -1,4 +1,5 @@
 $primary: white
+$breakpoint-tablet: 768px
 
 h1 
     font-family: "Raleway", sans-serif
@@ -21,4 +22,8 @@ h1
     width: 70vw
 
 .homepage-btns
-    font-size: 4vw
+    font-size: 5vw
+
+@media (min-width: $breakpoint-tablet) 
+    .homepage-btns
+        font-size: 3vw
