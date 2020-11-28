@@ -24,5 +24,31 @@ h1 {
 @media (min-width: 768px) {
   .homepage-btns {
     font-size: 3vw; } }
+.bgimg3 {
+  background-image: url("https://images.caradisiac.com/logos/0/8/8/6/190886/S0-un-milliardaire-russe-rachete-le-nurburgring-107922.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw; }
+
+#grad {
+  background: linear-gradient(to right, black, #6e6e6e); }
+
+#content-wrapper {
+  height: 85vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.quiz-image-class {
+  object-fit: none;
+  width: 100%; }
+
+#answer-card {
+  max-width: 95vw;
+  margin-top: 30px;
+  background: rgba(192, 192, 192, 0.726);
+  padding: 20px; }
 
 /*# sourceMappingURL=test.css.map */
