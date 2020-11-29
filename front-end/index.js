@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMCONTENTLOADED')
+    fireEventListeners();
+})
 const carsAdapter = new CarsAdapter 
 
 const startQuiz = document.getElementById("start-quiz")
@@ -6,21 +10,17 @@ const quizContainer = document.getElementById("quiz-container")
 const body = document.getElementsByTagName('body')[0]
 const contentWrapper = document.getElementById('content-wrapper')
 const studyButton = document.getElementById("study-cars")
-studyButton.addEventListener('click', displayCars)
+// studyButton.addEventListener('click', displayCars)
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    fireEventListeners();
-})
 
 function fireEventListeners() {
-    
-    const studyButton = document.getElementById("study-cars")
-    studyButton.addEventListener('click', displayCars)
+    // const studyButton = document.getElementById("study-cars")
+    // studyButton.addEventListener('click', displayCars)
     const startQuiz = document.getElementById("start-quiz")
     startQuiz.addEventListener('click', beginQuiz)
-    const addCarsButton = document.getElementById('add-cars')
-    addCarsButton.addEventListener('click', addCarsPage)
+    // const addCarsButton = document.getElementById('add-cars')
+    // addCarsButton.addEventListener('click', addCarsPage)
 
 }
 
@@ -40,14 +40,15 @@ function beginQuiz() {
 
 
 function  switchToMainCssDesign(render) {
+    console.log(render, 'switchToMainCssDesign')
     body.innerHTML = 
-    `<div class="w3-display-container">
-    <div id="grad" class="w3-bar">
-    <a href="" class="w3-bar-item w3-button w3-hover-none w3-text-grey w3-hover-text-white w3-left"><img src="logo/isolated-monochrome-white.svg" alt="LOGO" width="77" height="25" id="img-logo"></a>
-    </div>
-    <div id='content-wrapper'>
-    
-    </div>
+    `<div class="">
+        <div id="grad" class="w3-bar">
+            <a href="" class="w3-bar-item w3-button w3-hover-none w3-text-grey w3-hover-text-white w3-left">
+                <img src="logo/isolated-monochrome-white.svg" alt="LOGO" width="77" height="25" id="img-logo">
+            </a>
+        </div>
+        <div id='content-wrapper'></div>
     </div>`
     if(render === 'quiz') {
         body.firstElementChild.classList.add('bgimg3') //add background image 
@@ -177,16 +178,14 @@ function answerForm() {
     const answerWrapper = document.createElement('div')
     answerWrapper.id = 'answer-wrapper'
     answerWrapper.innerHTML = 
-    `<div id="answer-wrapper" >
-        <div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " style="max-width: 500px; margin:auto;  margin-top: 30px; background: rgba(192, 192, 192, 0.726); padding: 20px;">
-            <h2 class="w3-text-black" id="question-title">Do you know this car?</h2>
-            <div id="image-container"></div><br>
-                <form id="answer-form" method="POST">
-                    <input id="answer" class="w3-input" type="text" name="answer" placeholder="Make and Model" > <br>
-                    <input class="w3-button w3-block w3-green" type="submit">
-                </form>
-                <div id="card-content'></div>
-            </div>
+    `<div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " >
+        <h2 class="w3-text-black" id="question-title">Do you know this car?</h2>
+        <div id="image-container"></div><br>
+            <form id="answer-form" method="POST">
+                <input id="answer" class="w3-input" type="text" name="answer" placeholder="Make and Model" > <br>
+                <input class="w3-button w3-block w3-green" type="submit">
+            </form>
+            <div id="card-content'></div>
         </div>
     </div>`
     const contentWrapper = document.getElementById('content-wrapper')
@@ -200,10 +199,12 @@ function displayResults() {
     const last10Questions = Car.all.slice(-10)
     return last10Questions.map( e => {
         return `<div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " style="max-width: 500px; margin:auto; margin-top: 30px; background: rgba(192, 192, 192, 0.726); padding: 20px;">
-            <div id="image-container"><img src="${e.images[0].url}" id="quiz-image" class="results-image-class ></div><br><br>
-            Correct Answer: ${e.makeAndModel()}
-            </div>
-        </div>`
+                    <div id="image-container">
+                        <img src="${e.images[0].url}" id="quiz-image" class="results-image-class >
+                    </div><br><br>
+                    Correct Answer: ${e.makeAndModel()}
+                </div>
+            </div>`
     })
 
 
