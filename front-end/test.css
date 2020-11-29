@@ -54,6 +54,10 @@ h1 {
 .image-container {
   width: 100%; }
 
+.results-image-class {
+  object-fit: cover;
+  width: 100%; }
+
 @media only screen and (min-width: 500px) {
   #answer-card {
     max-width: 500px;
