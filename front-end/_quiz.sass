@@ -16,13 +16,34 @@
     justify-content: center 
     align-items: center 
 
-.quiz-image-class 
-    object-fit: none
-    width: 100%
-
+    
 #answer-card 
-    max-width: 95vw 
+    max-width: 350px
     margin:auto 
     margin-top: 30px
     background: rgba(192, 192, 192, 0.726)
     padding: 20px
+    
+.quiz-image-class 
+    object-fit: none
+    width: 100%
+
+.image-container 
+    width: 100%
+
+
+@media only screen and (min-width: $breakpoint-phone)
+    #answer-card
+        max-width: 500px
+        margin:auto 
+        margin-top: 30px
+        background: rgba(192, 192, 192, 0.726)
+        padding: 20px
+
+    .quiz-image-class 
+        object-fit: none
+        width: 100%
+    
+    #image-container 
+        width: 368px
+        

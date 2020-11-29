@@ -41,14 +41,31 @@ h1 {
   justify-content: center;
   align-items: center; }
 
+#answer-card {
+  max-width: 350px;
+  margin-top: 30px;
+  background: rgba(192, 192, 192, 0.726);
+  padding: 20px; }
+
 .quiz-image-class {
   object-fit: none;
   width: 100%; }
 
-#answer-card {
-  max-width: 95vw;
-  margin-top: 30px;
-  background: rgba(192, 192, 192, 0.726);
-  padding: 20px; }
+.image-container {
+  width: 100%; }
+
+@media only screen and (min-width: 500px) {
+  #answer-card {
+    max-width: 500px;
+    margin-top: 30px;
+    background: rgba(192, 192, 192, 0.726);
+    padding: 20px; }
+
+  .quiz-image-class {
+    object-fit: none;
+    width: 100%; }
+
+  #image-container {
+    width: 368px; } }
 
 /*# sourceMappingURL=test.css.map */
