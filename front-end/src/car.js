@@ -193,7 +193,7 @@
         const image = this.findLastImage()
       
         statsWrapper.innerHTML = `
-            <div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " style="max-width: 500px; margin:auto; margin-top: 30px; background: rgba(192, 192, 192, 0.726); padding: 20px;">
+            <div id="answer-card" class="w3-card-4 w3-center w3-hover-shadow w3-light-grey " >
                 <h2 class="w3-text-black" id="question-title">${this.rightOrWrong()}</h2>
                 <h3 class="w3-text-black" id="question-title">This is a ${this.findLastCar()}</h3>
                 <div id="image-container">
@@ -206,7 +206,6 @@
                     <form id="stats-form" method="POST">
                         <input class="w3-button w3-block w3-green" value="Next Question" type="submit">
                     </form>
-                    
                 </div>
             </div>`  
             return statsWrapper

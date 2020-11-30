@@ -1,0 +1,49 @@
+$primary: white
+$breakpoint-widescreen: 1224px
+$breakpoint-tablet: 768px
+$breakpoint-phone: 500px
+
+h1 
+    font-family: "Raleway", sans-serif
+
+.bgimg
+    background-image: url('https://wallpaperaccess.com/full/244510.jpg')
+    background-position: center
+    background-size: cover
+    height: 100vh
+    width: 100vw
+    display: flex 
+    justify-content: center 
+    align-items: center 
+    
+.btn-ctn 
+    text-align: center
+
+#homepage-logo 
+    display: block 
+    width: 85vw
+
+.homepage-btns
+    font-size: 5vw
+
+@media (min-width: $breakpoint-tablet) 
+    #homepage-logo 
+        display: block
+        width: 70vw
+    .homepage-btns
+        font-size: 3vw
+
+@media (min-width: $breakpoint-widescreen) 
+    #homepage-logo 
+        display: block
+        width: 60vw
+    .homepage-btns
+        font-size: 2vw
+
+@import quiz
+
+@import results 
+
+    
+    
+    
