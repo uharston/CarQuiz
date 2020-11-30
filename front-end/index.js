@@ -123,9 +123,9 @@ function fetchMakes() {
                 <div id='logo-wrapper' >
                     <img src="logo/default-monochrome-white.svg" alt="LOGO" id="homepage-logo">
                 </div>
-                <div id="myBtn" class="w3-button w3-black w3-opacity" > See your report here</div><br><br>
-                <button id="start-quiz" class="w3-button w3-round w3-xxlarge w3-opacity w3-black">Play Again</button>
-                <button id="study-cars" class="w3-button w3-round w3-xxlarge w3-opacity w3-black">Study the Cars</button>
+                <div id="myBtn" class="report-btn w3-button w3-black w3-opacity" > See your report here</div><br><br>
+                <button id="start-quiz" class="homepage-btns w3-button w3-round w3-opacity w3-black ">Play Again</button>
+                <button id="study-cars" class="homepage-btns w3-button w3-round w3-opacity w3-black ">Study the Cars</button>
             </div>
         </div>
     </div>`
