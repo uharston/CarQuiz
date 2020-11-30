@@ -16,14 +16,25 @@ h1 {
 
 #homepage-logo {
   display: block;
-  width: 70vw; }
+  width: 85vw; }
 
 .homepage-btns {
   font-size: 5vw; }
 
 @media (min-width: 768px) {
+  #homepage-logo {
+    display: block;
+    width: 70vw; }
+
   .homepage-btns {
     font-size: 3vw; } }
+@media (min-width: 1224px) {
+  #homepage-logo {
+    display: block;
+    width: 60vw; }
+
+  .homepage-btns {
+    font-size: 2vw; } }
 .bgimg3 {
   background-image: url("https://images.caradisiac.com/logos/0/8/8/6/190886/S0-un-milliardaire-russe-rachete-le-nurburgring-107922.jpg");
   background-position: center;
@@ -144,5 +155,15 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center; }
+
+.report-btn {
+  font-size: 4vw; }
+
+@media (min-width: 768px) {
+  .report-btn {
+    font-size: 2vw; } }
+@media (min-width: 1224px) {
+  .report-btn {
+    font-size: 1vw; } }
 
 /*# sourceMappingURL=test.css.map */
