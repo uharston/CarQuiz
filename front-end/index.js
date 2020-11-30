@@ -50,6 +50,7 @@ function  switchToMainCssDesign(render) {
         </div>
         <div id='content-wrapper'></div>
     </div>`
+
     if(render === 'quiz') {
         body.firstElementChild.classList.add('bgimg3') //add background image 
         answerForm(); 
@@ -95,7 +96,7 @@ function fetchMakes() {
 
  function quizResults() {
      body.innerHTML = `
-     <div id="myModal" class="modal">
+     <div id="myModal" class="modal" style='padding-top: 3vh;'>
      <!-- Modal content -->
          <div class="modal-content">
              <div class="modal-header">
@@ -116,23 +117,18 @@ function fetchMakes() {
                  <h3 class="w3-center" > Thanks For Playing </h3>
              </div>
          </div>
-     </div><br><br>
-    <div class="bgimg2 w3-display-container">
-        <div class="w3-display-middle">
-            <div class="w3-center w3-text-white">
-                <div class="w3-xxxlarge">Thanks for Playing</div><br><br>
-                    <div id="quiz-container" class="text-center w3-animate-top">
-                        <img class="result-img" src="logo/default-monochrome-white.svg" alt="LOGO" width="770" height="200" id="img-logo">
-                        
-                            <span id="myBtn" class="w3-button w3-black w3-opacity"> See your report here</span><br><br><br><br>
-                            <button id="start-quiz" class="w3-button w3-round w3-xxlarge w3-opacity w3-black">Play Again</button>
-                            <button id="study-cars" class="w3-button w3-round w3-xxlarge w3-opacity w3-black">Study the Cars</button>
-                           
-                    </div>
-            
+     </div>
+     <div class="bgimg2 page-wrapper">
+            <div id="result-container" >
+                <div id='logo-wrapper' >
+                    <img src="logo/default-monochrome-white.svg" alt="LOGO" id="homepage-logo">
+                </div>
+                <div id="myBtn" class="w3-button w3-black w3-opacity" > See your report here</div><br><br>
+                <button id="start-quiz" class="w3-button w3-round w3-xxlarge w3-opacity w3-black">Play Again</button>
+                <button id="study-cars" class="w3-button w3-round w3-xxlarge w3-opacity w3-black">Study the Cars</button>
+            </div>
         </div>
-    </div>
-</div>`
+    </div>`
 
     reportCardListeners(); 
     fireEventListeners();
