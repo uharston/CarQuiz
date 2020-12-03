@@ -3,17 +3,18 @@ class CarsController < ApplicationController
     def index 
         cars = Car.all 
         render json: cars.to_json(include: {images: {only: [:url, :car_id]}}, only: [:id, :make, :model, :likes, :dislikes])
-        # renderjson: categories.to_json(include: {items: {only: [:name, :description, :price]}}, only: :name)
+        #render json: CarSerializer.new(cars).serializable_hash.to_json
     end 
 
     def game 
         cars = Car.all.sample(10)
-        render json: cars.to_json(include: {images: {only: [:url, :car_id]}}, only: [:id, :make, :model])
+        render json: CarSerializer.new(car).serializable_hash.to_json
+        #render json: cars.to_json(include: {images: {only: [:url, :car_id]}}, only: [:id, :make, :model])
     end 
 
     def show 
-        
         car = Car.find_by(id: params[:id])
+        # render json: CarSerializer.new(car).serializable_hash.to_json
         render json: car.to_json(include: {images: {only: [:url, :car_id]}}, only: [:id, :make, :model, :likes, :dislikes])
     end 
 
